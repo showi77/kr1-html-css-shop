@@ -1,10 +1,12 @@
-# FrontendAndBackendForUniversity
+# kr1-html-css-shop
 1. Название проекта FrontendAndBackendForUniversity
 2. Репозиторий для практических занятий по фронтенд и бекенд разработки
 3. структура:
 ```
 FrontendAndBackendForUniversity/
 ├──.gitignore
+├── css/
+│   └── style.css
 ├──README.md
 ├──index.html
 └──secondFile.html
