@@ -47,6 +47,7 @@ body {
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-bg);
+  padding-top: 100px;
 }
 
 header,
@@ -57,6 +58,10 @@ footer {
 
 header {
   background-color: var(--color-surface);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 footer {
