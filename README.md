@@ -4,19 +4,28 @@
 3. структура:
 ```
 FrontendAndBackendForUniversity/
-├──.gitignore
+├── index.html
+├── catalog.html
+├── contacts.html
 ├── css/
 │   └── style.css
 ├── js/
 │   └── main.js
-├──README.md
-├──index.html
-└──secondFile.html
+├── images/
+│   └── preview.png
+├── README.md
+└── .gitignore
+
 ```
 5. использованыые технолгии - git, GitHub, visual studio code
 6. https://showi77.github.io/kr1-html-css-shop/
 7. Хуснуматин Вячеслав Ильдарович ЭФБО-07-25
 
+
+## Дополнительные элементы
+
+- `sitemap.xml` — простая карта сайта;
+- Open Graph-теги — базовая разметка для отображения ссылок.
 
 
 ## Постановка контрольной работы №1
