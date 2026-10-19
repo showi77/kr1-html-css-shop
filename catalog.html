@@ -5,23 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Каталог товаров учебного интернет-магазина."
+      content="Каталог техники и электроники учебного интернет-магазина."
     />
     <title>Каталог товаров — Учебный интернет-магазин</title>
     <link rel="stylesheet" href="css/styles.css" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Учебный интернет-магазин" />
-    <meta
-      property="og:description"
-      content="Учебный frontend-проект интернет-магазина."
-    />
-    <meta
-      property="og:image"
-      content="https://username.github.io/kr1-html-css-shop/images/preview.png"
-    />
+    <script src="js/main.js" defer></script>
   </head>
-  <body>
+  <body id="top">
     <header class="site-header">
       <div class="site-header__inner">
         <a class="site-header__logo" href="index.html">ShopProject</a>
@@ -29,7 +19,7 @@
         <nav class="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
             <li class="site-nav__item">
-              <a class="site-nav__link" href="index.html"> Главная </a>
+              <a class="site-nav__link" href="index.html">Главная</a>
             </li>
             <li class="site-nav__item">
               <a
@@ -39,22 +29,13 @@
               >
             </li>
             <li class="site-nav__item">
+              <a class="site-nav__link" href="about.html">О нас</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="delivery.html">Доставка</a>
+            </li>
+            <li class="site-nav__item">
               <a class="site-nav__link" href="contacts.html">Контакты</a>
-            </li>
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="index.html#advantages">
-                Преимущества
-              </a>
-            </li>
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="index.html#popular">
-                Популярные товары
-              </a>
-            </li>
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="index.html#contacts">
-                Обратная связь
-              </a>
             </li>
           </ul>
         </nav>
@@ -68,39 +49,49 @@
       </nav>
 
       <section class="catalog-layout">
+        <!-- Боковая панель фильтрации -->
         <aside class="catalog-filters">
           <h2>Фильтры</h2>
 
           <form class="filters-form" action="#" method="get">
             <fieldset>
-              <legend>Категория</legend>
-
+              <legend>Категории</legend>
               <label>
-                <input type="checkbox" name="category" value="all" />
-                Все товары
+                <input type="checkbox" name="cat" value="peripherals" checked />
+                Периферия (12)
               </label>
-
               <label>
-                <input type="checkbox" name="category" value="popular" />
-                Популярные
+                <input type="checkbox" name="cat" value="audio" /> Аудио (4)
               </label>
-
               <label>
-                <input type="checkbox" name="category" value="new" />
-                Новинки
+                <input type="checkbox" name="cat" value="accessories" />
+                Аксессуары (5)
               </label>
             </fieldset>
 
             <fieldset>
-              <legend>Цена</legend>
+              <legend>Статус товара</legend>
+              <label>
+                <input type="checkbox" name="badge" value="hit" /> Хиты продаж
+              </label>
+              <label>
+                <input type="checkbox" name="badge" value="discount" /> Со
+                скидкой
+              </label>
+              <label>
+                <input type="checkbox" name="badge" value="new" /> Новинки
+              </label>
+            </fieldset>
 
+            <fieldset>
+              <legend>Цена (руб.)</legend>
               <label for="price-from">От</label>
               <input
                 id="price-from"
                 name="price-from"
                 type="number"
                 min="0"
-                placeholder="0"
+                placeholder="1000"
               />
 
               <label for="price-to">До</label>
@@ -109,496 +100,407 @@
                 name="price-to"
                 type="number"
                 min="0"
-                placeholder="5000"
+                placeholder="25000"
               />
             </fieldset>
 
-            <button class="button" type="submit">Применить</button>
+            <button class="button button--primary" type="submit">
+              Применить
+            </button>
+            <button class="button button--secondary" type="reset">
+              Сбросить
+            </button>
           </form>
         </aside>
 
+        <!-- Основная колонка с 12 товарами -->
         <section class="catalog-products">
-          <h2>Список товаров</h2>
+          <div class="catalog-header">
+            <h1 class="catalog-header__title">Каталог товаров</h1>
+            <p class="catalog-header__desc">
+              Современное оборудование, периферия и гаджеты для комфортной
+              работы и учёбы.
+            </p>
+          </div>
 
           <div class="products-grid">
-            <div class="products-grid">
-              <article class="product-card product-card--featured">
-                <span class="product-card__badge">Хит</span>
-                <h3 class="product-card__title">Товар 1</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 1000 руб.</p>
+            <!-- Товар 1 -->
+            <article class="product-card product-card--featured">
+              <span class="product-card__badge">Хит</span>
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 4.8 (34)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">Беспроводная мышь Pro</h3>
+              <p class="product-card__description">
+                Эргономичный оптический сенсор 16000 DPI, до 70 ч работы.
+              </p>
+              <p class="product-card__price">Цена: 2 490 руб.</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="mouse"
+                  href="product.html?id=mouse"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 1"
+                  data-product="Беспроводная мышь Pro"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--discount">
-                <span class="product-card__badge">Скидка</span>
-                <h3 class="product-card__title">Товар 2</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">
-                  Цена: 1300 руб.
-                  <del style="color: var(--color-muted); font-size: 14px"
-                    >1500 руб.</del
-                  >
-                </p>
+            <!-- Товар 2 -->
+            <article class="product-card product-card--discount">
+              <span class="product-card__badge">Скидка -20%</span>
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 4.9 (52)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">Механическая клавиатура RGB</h3>
+              <p class="product-card__description">
+                Красные свитчи, Hot-Swap, настраиваемая подсветка клавиш.
+              </p>
+              <p class="product-card__price">
+                Цена: 4 800 руб.
+                <del style="color: var(--color-muted); font-size: 14px"
+                  >6 000 руб.</del
+                >
+              </p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="keyboard"
+                  href="product.html?id=keyboard"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 2"
+                  data-product="Механическая клавиатура RGB"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--new">
-                <span class="product-card__badge">Новинка</span>
-                <h3 class="product-card__title">Товар 3</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 2000 руб.</p>
+            <!-- Товар 3 -->
+            <article class="product-card product-card--new">
+              <span class="product-card__badge">Новинка</span>
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 4.7 (19)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">Беспроводные наушники ANC</h3>
+              <p class="product-card__description">
+                Активное шумоподавление, микрофон студийного уровня, Bluetooth
+                5.3.
+              </p>
+              <p class="product-card__price">Цена: 5 990 руб.</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="headphones"
+                  href="product.html?id=headphones"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 3"
+                  data-product="Беспроводные наушники ANC"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--featured">
-                <span class="product-card__badge">Хит</span>
-                <h3 class="product-card__title">Товар 1</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 1000 руб.</p>
+            <!-- Товар 4 -->
+            <article class="product-card">
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 4.6 (28)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">Веб-камера Ultra HD 2K</h3>
+              <p class="product-card__description">
+                Автофокус, встроенная шторка приватности и двойной микрофон.
+              </p>
+              <p class="product-card__price">Цена: 3 600 руб.</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="webcam"
+                  href="product.html?id=webcam"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 1"
+                  data-product="Веб-камера Ultra HD 2K"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--discount">
-                <span class="product-card__badge">Скидка</span>
-                <h3 class="product-card__title">Товар 2</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">
-                  Цена: 1300 руб.
-                  <del style="color: var(--color-muted); font-size: 14px"
-                    >1500 руб.</del
-                  >
-                </p>
+            <!-- Товар 5 -->
+            <article class="product-card product-card--discount">
+              <span class="product-card__badge">Скидка -15%</span>
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 4.9 (41)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">USB-C Hub 8-in-1</h3>
+              <p class="product-card__description">
+                HDMI 4K, Power Delivery 100W, картридер SD/microSD, 3x USB 3.0.
+              </p>
+              <p class="product-card__price">
+                Цена: 2 890 руб.
+                <del style="color: var(--color-muted); font-size: 14px"
+                  >3 400 руб.</del
+                >
+              </p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="hub"
+                  href="product.html?id=hub"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 2"
+                  data-product="USB-C Hub 8-in-1"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--new">
-                <span class="product-card__badge">Новинка</span>
-                <h3 class="product-card__title">Товар 3</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 2000 руб.</p>
+            <!-- Товар 6 -->
+            <article class="product-card product-card--featured">
+              <span class="product-card__badge">Хит</span>
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 5.0 (64)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">Подставка для ноутбука Pro</h3>
+              <p class="product-card__description">
+                Алюминиевый корпус, регулировка высоты, пассивное охлаждение.
+              </p>
+              <p class="product-card__price">Цена: 1 950 руб.</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="stand"
+                  href="product.html?id=stand"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 3"
+                  data-product="Подставка для ноутбука Pro"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--featured">
-                <span class="product-card__badge">Хит</span>
-                <h3 class="product-card__title">Товар 1</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 1000 руб.</p>
+            <!-- Товар 7 -->
+            <article class="product-card product-card--featured">
+              <span class="product-card__badge">Хит</span>
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 4.8 (39)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">Беспроводная мышь Pro (Black)</h3>
+              <p class="product-card__description">
+                Эргономичный оптический сенсор 16000 DPI, до 70 ч работы. Цвет:
+                черный.
+              </p>
+              <p class="product-card__price">Цена: 2 590 руб.</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="mouse"
+                  href="product.html?id=mouse"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 1"
+                  data-product="Беспроводная мышь Pro (Black)"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--discount">
-                <span class="product-card__badge">Скидка</span>
-                <h3 class="product-card__title">Товар 2</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">
-                  Цена: 1300 руб.
-                  <del style="color: var(--color-muted); font-size: 14px"
-                    >1500 руб.</del
-                  >
-                </p>
+            <!-- Товар 8 -->
+            <article class="product-card product-card--discount">
+              <span class="product-card__badge">Скидка -25%</span>
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 4.9 (48)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Механическая клавиатура RGB (White)
+              </h3>
+              <p class="product-card__description">
+                Синие кликающие свитчи, Hot-Swap, настраиваемая подсветка
+                клавиш.
+              </p>
+              <p class="product-card__price">
+                Цена: 4 650 руб.
+                <del style="color: var(--color-muted); font-size: 14px"
+                  >6 200 руб.</del
+                >
+              </p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="keyboard"
+                  href="product.html?id=keyboard"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 2"
+                  data-product="Механическая клавиатура RGB (White)"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--new">
-                <span class="product-card__badge">Новинка</span>
-                <h3 class="product-card__title">Товар 3</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 2000 руб.</p>
+            <!-- Товар 9 -->
+            <article class="product-card product-card--new">
+              <span class="product-card__badge">Новинка</span>
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 4.8 (22)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Беспроводные наушники ANC Plus
+              </h3>
+              <p class="product-card__description">
+                Активное шумоподавление, микрофон студийного уровня, Bluetooth
+                5.4.
+              </p>
+              <p class="product-card__price">Цена: 6 290 руб.</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="headphones"
+                  href="product.html?id=headphones"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 3"
+                  data-product="Беспроводные наушники ANC Plus"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--featured">
-                <span class="product-card__badge">Хит</span>
-                <h3 class="product-card__title">Товар 1</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 1000 руб.</p>
+            <!-- Товар 10 -->
+            <article class="product-card">
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 4.7 (33)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">Веб-камера Ultra HD 4K</h3>
+              <p class="product-card__description">
+                Автофокус, встроенная шторка приватности и двойной
+                стерео-микрофон.
+              </p>
+              <p class="product-card__price">Цена: 4 200 руб.</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="webcam"
+                  href="product.html?id=webcam"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 1"
+                  data-product="Веб-камера Ultra HD 4K"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--discount">
-                <span class="product-card__badge">Скидка</span>
-                <h3 class="product-card__title">Товар 2</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">
-                  Цена: 1300 руб.
-                  <del style="color: var(--color-muted); font-size: 14px"
-                    >1500 руб.</del
-                  >
-                </p>
+            <!-- Товар 11 -->
+            <article class="product-card product-card--discount">
+              <span class="product-card__badge">Скидка -10%</span>
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 4.9 (57)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">USB-C Hub 10-in-1 Pro</h3>
+              <p class="product-card__description">
+                HDMI 4K, Gigabit Ethernet, Power Delivery 100W, 4x USB 3.0.
+              </p>
+              <p class="product-card__price">
+                Цена: 3 150 руб.
+                <del style="color: var(--color-muted); font-size: 14px"
+                  >3 500 руб.</del
+                >
+              </p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="hub"
+                  href="product.html?id=hub"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 2"
+                  data-product="USB-C Hub 10-in-1 Pro"
                 >
                   Заказать
                 </button>
-              </article>
+              </div>
+            </article>
 
-              <article class="product-card product-card--new">
-                <span class="product-card__badge">Новинка</span>
-                <h3 class="product-card__title">Товар 3</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 2000 руб.</p>
+            <!-- Товар 12 -->
+            <article class="product-card product-card--featured">
+              <span class="product-card__badge">Хит</span>
+              <div class="product-card__meta">
+                <span class="product-card__rating">★ 5.0 (71)</span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Подставка для ноутбука Pro Max
+              </h3>
+              <p class="product-card__description">
+                Усиленный алюминиевый корпус, регулировка высоты для ноутбуков
+                до 17".
+              </p>
+              <p class="product-card__price">Цена: 2 190 руб.</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary product-detail-link"
+                  data-id="stand"
+                  href="product.html?id=stand"
+                  >Подробнее</a
+                >
                 <button
-                  class="button product-card__button"
+                  class="button button--primary product-card__button"
                   type="button"
-                  data-product="Товар 3"
+                  data-product="Подставка для ноутбука Pro Max"
                 >
                   Заказать
                 </button>
-              </article>
-
-              <article class="product-card product-card--featured">
-                <span class="product-card__badge">Хит</span>
-                <h3 class="product-card__title">Товар 1</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 1000 руб.</p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 1"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--discount">
-                <span class="product-card__badge">Скидка</span>
-                <h3 class="product-card__title">Товар 2</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">
-                  Цена: 1300 руб.
-                  <del style="color: var(--color-muted); font-size: 14px"
-                    >1500 руб.</del
-                  >
-                </p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 2"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--new">
-                <span class="product-card__badge">Новинка</span>
-                <h3 class="product-card__title">Товар 3</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 2000 руб.</p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 3"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--featured">
-                <span class="product-card__badge">Хит</span>
-                <h3 class="product-card__title">Товар 1</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 1000 руб.</p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 1"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--discount">
-                <span class="product-card__badge">Скидка</span>
-                <h3 class="product-card__title">Товар 2</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">
-                  Цена: 1300 руб.
-                  <del style="color: var(--color-muted); font-size: 14px"
-                    >1500 руб.</del
-                  >
-                </p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 2"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--new">
-                <span class="product-card__badge">Новинка</span>
-                <h3 class="product-card__title">Товар 3</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 2000 руб.</p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 3"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--featured">
-                <span class="product-card__badge">Хит</span>
-                <h3 class="product-card__title">Товар 1</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 1000 руб.</p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 1"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--discount">
-                <span class="product-card__badge">Скидка</span>
-                <h3 class="product-card__title">Товар 2</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">
-                  Цена: 1300 руб.
-                  <del style="color: var(--color-muted); font-size: 14px"
-                    >1500 руб.</del
-                  >
-                </p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 2"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--new">
-                <span class="product-card__badge">Новинка</span>
-                <h3 class="product-card__title">Товар 3</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 2000 руб.</p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 3"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--featured">
-                <span class="product-card__badge">Хит</span>
-                <h3 class="product-card__title">Товар 1</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 1000 руб.</p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 1"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--discount">
-                <span class="product-card__badge">Скидка</span>
-                <h3 class="product-card__title">Товар 2</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">
-                  Цена: 1300 руб.
-                  <del style="color: var(--color-muted); font-size: 14px"
-                    >1500 руб.</del
-                  >
-                </p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 2"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--new">
-                <span class="product-card__badge">Новинка</span>
-                <h3 class="product-card__title">Товар 3</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 2000 руб.</p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 3"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--featured">
-                <span class="product-card__badge">Хит</span>
-                <h3 class="product-card__title">Товар 1</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 1000 руб.</p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 1"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--discount">
-                <span class="product-card__badge">Скидка</span>
-                <h3 class="product-card__title">Товар 2</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">
-                  Цена: 1300 руб.
-                  <del style="color: var(--color-muted); font-size: 14px"
-                    >1500 руб.</del
-                  >
-                </p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 2"
-                >
-                  Заказать
-                </button>
-              </article>
-
-              <article class="product-card product-card--new">
-                <span class="product-card__badge">Новинка</span>
-                <h3 class="product-card__title">Товар 3</h3>
-                <p class="product-card__description">
-                  Краткое описание учебного товара.
-                </p>
-                <p class="product-card__price">Цена: 2000 руб.</p>
-                <button
-                  class="button product-card__button"
-                  type="button"
-                  data-product="Товар 3"
-                >
-                  Заказать
-                </button>
-              </article>
-            </div>
+              </div>
+            </article>
           </div>
         </section>
       </section>
@@ -608,5 +510,144 @@
       <p>&copy; 2026 Учебный проект. Все права защищены.</p>
       <p>Дисциплина: Фронтенд и бэкенд разработка</p>
     </footer>
+
+    <!-- Модальное окно оформления заявки -->
+    <dialog
+      class="order-dialog"
+      id="order-dialog"
+      aria-labelledby="order-dialog-title"
+    >
+      <h2 class="order-dialog__title" id="order-dialog-title">
+        Оформление заявки
+      </h2>
+      <form
+        class="order-form"
+        id="order-form"
+        action="#"
+        method="post"
+        novalidate
+      >
+        <input id="selected-product" name="selected-product" type="hidden" />
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name">Имя</label>
+          <input
+            class="order-form__input"
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            required
+          />
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-email">E-mail</label>
+          <input
+            class="order-form__input"
+            id="order-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            required
+          />
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone">Телефон</label>
+          <input
+            class="order-form__input"
+            id="order-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            required
+          />
+          <small>Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="form-field">
+          <label class="order-form__label" for="order-date"
+            >Желаемая дата связи</label
+          >
+          <input
+            class="order-form__input"
+            id="order-date"
+            name="date"
+            type="date"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="order-topic">Тема заявки</label>
+          <select
+            id="order-topic"
+            name="topic"
+            required
+            class="order-form__select"
+          >
+            <option value="">Выберите тему</option>
+            <option value="product" selected>Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="order-comment">Комментарий</label>
+          <textarea
+            id="order-comment"
+            name="comment"
+            rows="3"
+            placeholder="Укажите пожелания или адрес доставки"
+            class="order-form__textarea"
+          ></textarea>
+        </div>
+
+        <div class="form-field form-field--checkbox">
+          <label>
+            <input
+              id="order-agreement"
+              name="agreement"
+              type="checkbox"
+              required
+            />
+            Я согласен на обработку данных
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button
+            class="button button--secondary"
+            type="button"
+            id="close-order-dialog"
+          >
+            Закрыть
+          </button>
+          <button class="button button--primary" type="submit">
+            Отправить заявку
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <p class="success-message" id="success-message" hidden>
+      Заявка успешно отправлена!
+    </p>
+
+    <!-- Кнопка «Наверх» -->
+    <a
+      href="#top"
+      class="scroll-top"
+      id="scroll-top"
+      aria-label="Вернуться в начало страницы"
+      title="Наверх"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+      </svg>
+    </a>
   </body>
 </html>

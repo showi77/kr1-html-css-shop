@@ -466,6 +466,7 @@ button {
   position: absolute;
   top: var(--space-sm);
   right: var(--space-sm);
+  z-index: 2; /* Текст бейджа всегда строго выше других элементов */
   padding: 4px 8px;
   color: var(--color-white);
   border-radius: var(--radius-sm);
@@ -547,4 +548,385 @@ button {
 .faq-item p {
   margin: var(--space-sm) 0 0;
   color: var(--color-muted);
+}
+
+/* ===============================
+   7. Расширенный каталог (фиксированный)
+   =============================== */
+
+.catalog-header {
+  margin-bottom: var(--space-lg);
+}
+
+.catalog-header__title {
+  margin: 0 0 var(--space-xs);
+}
+
+.catalog-header__desc {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.product-card__meta {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-top: var(--space-xs);
+}
+
+.product-card__rating {
+  color: #f39c12;
+  font-weight: 700;
+}
+
+.product-card__status {
+  color: var(--color-success);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.product-card__actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: auto;
+  padding-top: var(--space-sm);
+}
+
+.product-card__actions .button {
+  flex: 1;
+  text-align: center;
+  padding: var(--space-sm) 10px;
+  font-size: 14px;
+}
+
+/* Пагинация */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+  padding: 0;
+  list-style: none;
+}
+
+.pagination__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pagination__link:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.pagination__link--active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white) !important;
+}
+
+/* ===============================
+   8. Детальная карточка товара (фиксированная раскладка)
+   =============================== */
+
+.product-detail {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+}
+
+.product-detail__layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.product-gallery__main {
+  position: relative;
+  height: 360px;
+  background-color: var(--color-surface-accent);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+  color: var(--color-primary);
+}
+
+.product-gallery__thumbs {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.product-gallery__thumb {
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.product-gallery__thumb--active {
+  border-color: var(--color-primary);
+}
+
+/* Контейнер главного изображения */
+.product-gallery__main {
+  position: relative;
+  height: 360px;
+  background-color: var(--color-surface-accent);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Обрезает изображение по скругленным углам */
+  padding: var(--space-md);
+}
+
+/* Главная картинка */
+.product-gallery__main-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Сохраняет пропорции без искажений */
+  display: block;
+}
+
+.product-gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.product-gallery__thumb--active {
+  border-color: var(--color-primary);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.product-info__header {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-md);
+}
+
+.product-info__sku {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.product-info__title {
+  margin: var(--space-xs) 0 var(--space-sm);
+  font-size: 28px;
+}
+
+.product-info__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  font-size: 14px;
+}
+
+.product-info__price-box {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+}
+
+.product-info__price {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.product-info__old-price {
+  font-size: 18px;
+  color: var(--color-muted);
+}
+
+.product-info__badge-discount {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  padding: 3px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+}
+
+.product-info__actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.product-info__advantages {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0 0;
+  display: grid;
+  gap: var(--space-xs);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.product-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-md);
+}
+
+.product-specs-table th,
+.product-specs-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.product-specs-table tr:nth-child(even) {
+  background-color: var(--color-surface);
+}
+
+.product-specs-table th {
+  width: 40%;
+  color: var(--color-muted);
+  font-weight: normal;
+}
+
+.product-specs-table td {
+  font-weight: 600;
+}
+
+/* ===============================
+   9. Информационные страницы (about, delivery)
+   =============================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.stat-card {
+  padding: var(--space-lg);
+  text-align: center;
+  background-color: var(--color-surface-accent);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.stat-card__number {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.stat-card__label {
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+.delivery-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+
+.delivery-option {
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.delivery-option__badge {
+  align-self: flex-start;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  background-color: var(--color-surface-accent);
+  color: var(--color-primary);
+}
+
+/* ===============================
+   10. Фиксированная кнопка «Наверх»
+   =============================== */
+
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 87, 184, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.scroll-top--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 87, 184, 0.45);
+}
+
+.scroll-top svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
 }
