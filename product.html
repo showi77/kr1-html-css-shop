@@ -3,26 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Карточка товара учебного интернет-магазина."
-    />
-    <title>Товар 1 — Учебный интернет-магазин</title>
+    <meta name="description" content="Подробная информация о товаре." />
+    <title id="page-title">Карточка товара — Учебный интернет-магазин</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Учебный интернет-магазин" />
-    <meta
-      property="og:description"
-      content="Учебный frontend-проект интернет-магазина."
-    />
-    <meta
-      property="og:image"
-      content="https://username.github.io/kr1-html-css-shop/images/preview.png"
-    />
   </head>
-  <body>
+  <body id="top">
     <header class="site-header">
       <div class="site-header__inner">
         <a class="site-header__logo" href="index.html">ShopProject</a>
@@ -36,6 +22,12 @@
               <a class="site-nav__link" href="catalog.html">Каталог</a>
             </li>
             <li class="site-nav__item">
+              <a class="site-nav__link" href="about.html">О нас</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="delivery.html">Доставка</a>
+            </li>
+            <li class="site-nav__item">
               <a class="site-nav__link" href="contacts.html">Контакты</a>
             </li>
           </ul>
@@ -47,28 +39,97 @@
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a class="breadcrumbs__link" href="index.html">Главная</a>
         <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
-        <span class="breadcrumbs__current">Товар 1</span>
+        <span class="breadcrumbs__current" id="product-breadcrumb">Товар</span>
       </nav>
 
-      <section class="section">
-        <article
-          class="product-card product-card--featured"
-          style="max-width: 600px; margin: 0 auto; position: relative"
-        >
-          <h1 class="product-card__title">Товар 1</h1>
-          <p class="product-card__description">
-            Подробное описание учебного товара. Высокое качество и надежность
-            для выполнения учебных задач.
-          </p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <button
-            class="button button--primary product-card__button"
-            type="button"
-            data-product="Товар 1"
-          >
-            Заказать
-          </button>
-        </article>
+      <section class="product-detail">
+        <div class="product-detail__layout">
+          <!-- Галерея товара -->
+          <div class="product-gallery">
+            <div class="product-gallery__main">
+              <span
+                class="product-card__badge"
+                id="product-badge"
+                style="position: absolute; top: 16px; right: 16px; z-index: 2"
+              >
+                Хит
+              </span>
+              <img
+                class="product-gallery__main-img"
+                id="product-image"
+                src="images/mouse.webp"
+                alt="Изображение товара"
+              />
+            </div>
+
+          <!-- Описание и цена -->
+          <div class="product-info">
+            <div class="product-info__header">
+              <span class="product-info__sku" id="product-sku"
+                >Артикул: PR-00000</span
+              >
+              <h1 class="product-info__title" id="product-title">
+                Название товара
+              </h1>
+              <div class="product-info__meta">
+                <span class="product-card__rating" id="product-rating"
+                  >★ 5.0 (0 отзывов)</span
+                >
+                <span class="product-card__status">● В наличии на складе</span>
+              </div>
+            </div>
+
+            <div class="product-info__price-box">
+              <span class="product-info__price" id="product-price">0 руб.</span>
+              <del class="product-info__old-price" id="product-old-price" hidden
+                >0 руб.</del
+              >
+              <span
+                class="product-info__badge-discount"
+                id="product-discount"
+                hidden
+                >-0%</span
+              >
+            </div>
+
+            <p class="product-card__description" id="product-description">
+              Описание товара.
+            </p>
+
+            <ul class="product-info__advantages" id="product-advantages">
+              <!-- Заполняется динамически -->
+            </ul>
+
+            <div class="product-info__actions">
+              <button
+                class="button button--primary product-card__button"
+                id="product-order-button"
+                type="button"
+                data-product="Товар"
+                style="padding: 12px 24px; font-size: 16px"
+              >
+                Оформить заявку
+              </button>
+              <a
+                class="button button--secondary"
+                href="delivery.html"
+                style="padding: 12px 20px"
+              >
+                Условия доставки
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Таблица характеристик -->
+        <section class="section">
+          <h2>Технические характеристики</h2>
+          <table class="product-specs-table">
+            <tbody id="product-specs-tbody">
+              <!-- Заполняется динамически -->
+            </tbody>
+          </table>
+        </section>
       </section>
     </main>
 
@@ -77,6 +138,7 @@
       <p>Дисциплина: Фронтенд и бэкенд разработка</p>
     </footer>
 
+    <!-- Модальное окно оформления заявки -->
     <dialog
       class="order-dialog"
       id="order-dialog"
@@ -85,7 +147,6 @@
       <h2 class="order-dialog__title" id="order-dialog-title">
         Оформление заявки
       </h2>
-
       <form
         class="order-form"
         id="order-form"
@@ -102,7 +163,7 @@
             id="order-name"
             name="name"
             type="text"
-            placeholder="Введите ваше имя"
+            placeholder="Введите имя"
             required
           />
         </div>
@@ -131,49 +192,6 @@
             pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
             required
           />
-          <small>Формат: +7 (900) 000-00-00</small>
-        </div>
-
-        <div class="form-field">
-          <label class="order-form__label" for="order-date">Дата связи</label>
-          <input
-            class="order-form__input"
-            id="order-date"
-            name="date"
-            type="date"
-          />
-        </div>
-
-        <div class="form-field">
-          <label for="order-topic">Тема заявки</label>
-          <select id="order-topic" name="topic" required>
-            <option value="">Выберите тему</option>
-            <option value="product">Заказ товара</option>
-            <option value="consultation">Консультация</option>
-            <option value="delivery">Доставка</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="order-comment">Комментарий</label>
-          <textarea
-            id="order-comment"
-            name="comment"
-            rows="4"
-            placeholder="Укажите дополнительную информацию"
-          ></textarea>
-        </div>
-
-        <div class="form-field form-field--checkbox">
-          <label>
-            <input
-              id="order-agreement"
-              name="agreement"
-              type="checkbox"
-              required
-            />
-            Я согласен на обработку данных
-          </label>
         </div>
 
         <div class="order-form__actions">
@@ -190,8 +208,22 @@
         </div>
       </form>
     </dialog>
+
     <p class="success-message" id="success-message" hidden>
-      Форма успешно отправлена!
+      Заявка успешно оформлена!
     </p>
+
+    <!-- Кнопка «Наверх» -->
+    <a
+      href="#top"
+      class="scroll-top"
+      id="scroll-top"
+      aria-label="Вернуться в начало страницы"
+      title="Наверх"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+      </svg>
+    </a>
   </body>
 </html>
