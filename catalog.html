@@ -5,18 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Каталог техники и электроники учебного интернет-магазина."
+      content="Каталог видеокарт, процессоров, смартфонов и SSD в магазине Горбушка Тех (ТЦ Горбушкин Двор)."
     />
-    <title>Каталог товаров — Учебный интернет-магазин</title>
+    <title>Каталог техники — Горбушка Тех</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
   </head>
-  <body id="top">
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a class="site-header__logo" href="index.html">ShopProject</a>
 
-        <nav class="site-nav" aria-label="Основная навигация">
+  <body id="top">
+    <a class="skip-link" href="#main-content">
+      Перейти к основному содержимому
+    </a>
+
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="top-bar__inner">
+          <span>
+            ТЦ «Горбушкин Двор», Багратионовский пр., 7 к3, пав. B2-114 · м.
+            Багратионовская · Ежедневно 10:00–21:00
+          </span>
+          <a class="top-bar__phone" href="tel:+74957482590">
+            +7 (495) 748-25-90
+          </a>
+        </div>
+      </div>
+
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="index.html">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <rect x="9" y="9" width="6" height="6" />
+            <path
+              d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"
+            />
+          </svg>
+          <span>Горбушка Тех</span>
+          <span class="site-header__logo-badge">B2-114</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Меню
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
             <li class="site-nav__item">
               <a class="site-nav__link" href="index.html">Главная</a>
@@ -25,14 +71,19 @@
               <a
                 class="site-nav__link site-nav__link--active"
                 href="catalog.html"
-                >Каталог</a
+                aria-current="page"
               >
+                Каталог
+              </a>
             </li>
             <li class="site-nav__item">
-              <a class="site-nav__link" href="about.html">О нас</a>
+              <a class="site-nav__link" href="about.html">О магазине</a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="delivery.html">Доставка</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="order.html">Заявка</a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="contacts.html">Контакты</a>
@@ -42,30 +93,40 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a class="breadcrumbs__link" href="index.html">Главная</a>
-        <span class="breadcrumbs__current">Каталог</span>
+        <span class="breadcrumbs__current" aria-current="page">Каталог</span>
       </nav>
 
-      <section class="catalog-layout">
-        <!-- Боковая панель фильтрации -->
+      <div class="catalog-header">
+        <h1 class="catalog-header__title">Каталог техники и комплектующих</h1>
+        <p class="catalog-header__desc">
+          Видеокарты, процессоры, смартфоны, накопители и игровая периферия в
+          наличии в павильоне B2-114.
+        </p>
+      </div>
+
+      <div class="catalog-layout">
         <aside class="catalog-filters">
           <h2>Фильтры</h2>
 
-          <form class="filters-form" action="#" method="get">
+          <form class="filters-form" id="filters-form" action="#" method="get">
             <fieldset>
               <legend>Категории</legend>
               <label>
-                <input type="checkbox" name="cat" value="peripherals" checked />
-                Периферия (12)
+                <input type="checkbox" name="cat" value="gpu" /> Видеокарты (3)
               </label>
               <label>
-                <input type="checkbox" name="cat" value="audio" /> Аудио (4)
+                <input type="checkbox" name="cat" value="cpu" /> Процессоры (3)
               </label>
               <label>
-                <input type="checkbox" name="cat" value="accessories" />
-                Аксессуары (5)
+                <input type="checkbox" name="cat" value="phones" /> Смартфоны
+                (3)
+              </label>
+              <label>
+                <input type="checkbox" name="cat" value="peripherals" /> SSD и
+                периферия (3)
               </label>
             </fieldset>
 
@@ -84,442 +145,729 @@
             </fieldset>
 
             <fieldset>
-              <legend>Цена (руб.)</legend>
-              <label for="price-from">От</label>
+              <legend>Цена (₽)</legend>
+              <label class="filters-form__price-label" for="price-from">
+                От (₽)
+              </label>
               <input
                 id="price-from"
                 name="price-from"
                 type="number"
                 min="0"
-                placeholder="1000"
+                step="500"
+                placeholder="10000"
               />
 
-              <label for="price-to">До</label>
+              <label class="filters-form__price-label" for="price-to">
+                До (₽)
+              </label>
               <input
                 id="price-to"
                 name="price-to"
                 type="number"
                 min="0"
-                placeholder="25000"
+                step="500"
+                placeholder="130000"
               />
             </fieldset>
 
-            <button class="button button--primary" type="submit">
-              Применить
-            </button>
-            <button class="button button--secondary" type="reset">
-              Сбросить
-            </button>
+            <div class="filters-form__actions">
+              <button class="button button--primary" type="submit">
+                Применить
+              </button>
+              <button class="button button--secondary" type="reset">
+                Сбросить
+              </button>
+            </div>
           </form>
         </aside>
 
-        <!-- Основная колонка с 12 товарами -->
-        <section class="catalog-products">
-          <div class="catalog-header">
-            <h1 class="catalog-header__title">Каталог товаров</h1>
-            <p class="catalog-header__desc">
-              Современное оборудование, периферия и гаджеты для комфортной
-              работы и учёбы.
+        <section
+          class="catalog-products"
+          aria-labelledby="catalog-list-heading"
+        >
+          <h2 class="sr-only" id="catalog-list-heading">Список товаров</h2>
+          <p
+            class="catalog-results-info"
+            id="catalog-results-info"
+            aria-live="polite"
+          >
+            Найдено товаров: 12 из 12
+          </p>
+
+          <div class="products-grid" id="catalog-products-grid">
+            <!-- 1. Видеокарта RTX 4070 SUPER -->
+            <article
+              class="product-card product-card--featured"
+              data-category="gpu"
+              data-badge="hit"
+              data-price="68990"
+            >
+              <span class="product-card__badge">Хит</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/gpu-rtx4070.webp"
+                  width="320"
+                  height="200"
+                  alt="Видеокарта MSI GeForce RTX 4070 SUPER GAMING X SLIM 12GB с системой охлаждения из трёх вентиляторов"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 4.9 (48)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Видеокарта MSI GeForce RTX 4070 SUPER 12GB
+              </h3>
+              <p class="product-card__description">
+                GAMING X SLIM, 12 ГБ GDDR6X, PCIe 4.0, DLSS 3.5.
+              </p>
+              <p class="product-card__price">68 990 ₽</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=rtx-4070-super"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Видеокарта MSI GeForce RTX 4070 SUPER GAMING X SLIM 12GB"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 2. Видеокарта RTX 4080 SUPER -->
+            <article
+              class="product-card product-card--discount"
+              data-category="gpu"
+              data-badge="discount"
+              data-price="116900"
+            >
+              <span class="product-card__badge">Скидка -10%</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/gpu-rtx4080.webp"
+                  width="320"
+                  height="200"
+                  alt="Видеокарта ASUS TUF Gaming GeForce RTX 4080 SUPER OC 16GB в усиленном металлическом кожухе"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 5.0 (31)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Видеокарта ASUS TUF RTX 4080 SUPER OC 16GB
+              </h3>
+              <p class="product-card__description">
+                16 ГБ GDDR6X, Axial-tech охлаждение, заводской разгон.
+              </p>
+              <p class="product-card__price">
+                116 900 ₽
+                <del class="product-card__old-price">129 900 ₽</del>
+              </p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=rtx-4080-super"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Видеокарта ASUS TUF Gaming GeForce RTX 4080 SUPER OC 16GB"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 3. Видеокарта RX 7800 XT -->
+            <article
+              class="product-card product-card--featured"
+              data-category="gpu"
+              data-badge="hit"
+              data-price="58490"
+            >
+              <span class="product-card__badge">Хит</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/gpu-rx7800.webp"
+                  width="320"
+                  height="200"
+                  alt="Видеокарта Sapphire NITRO+ AMD Radeon RX 7800 XT 16GB с тремя вентиляторами и RGB-полосой"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 4.8 (27)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Видеокарта Sapphire Radeon RX 7800 XT 16GB
+              </h3>
+              <p class="product-card__description">
+                NITRO+, 16 ГБ GDDR6 256-bit, испарительная камера.
+              </p>
+              <p class="product-card__price">58 490 ₽</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=rx-7800-xt"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Видеокарта Sapphire NITRO+ AMD Radeon RX 7800 XT 16GB"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 4. Процессор Ryzen 7 7800X3D -->
+            <article
+              class="product-card product-card--featured"
+              data-category="cpu"
+              data-badge="hit"
+              data-price="41900"
+            >
+              <span class="product-card__badge">Хит</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/cpu-ryzen7.webp"
+                  width="320"
+                  height="200"
+                  alt="Процессор AMD Ryzen 7 7800X3D для сокета AM5 с технологией 3D V-Cache"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 5.0 (84)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Процессор AMD Ryzen 7 7800X3D AM5
+              </h3>
+              <p class="product-card__description">
+                8 ядер / 16 потоков, 96 МБ 3D V-Cache, сокет AM5 OEM.
+              </p>
+              <p class="product-card__price">41 900 ₽</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=ryzen-7-7800x3d"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Процессор AMD Ryzen 7 7800X3D AM5 OEM"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 5. Процессор Intel Core i7-14700K -->
+            <article
+              class="product-card product-card--discount"
+              data-category="cpu"
+              data-badge="discount"
+              data-price="43900"
+            >
+              <span class="product-card__badge">Скидка -12%</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/cpu-intel-i7.webp"
+                  width="320"
+                  height="200"
+                  alt="Процессор Intel Core i7-14700K для сокета LGA1700 в заводской упаковке"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 4.8 (42)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Процессор Intel Core i7-14700K BOX
+              </h3>
+              <p class="product-card__description">
+                20 ядер / 28 потоков, до 5.6 ГГц, сокет LGA1700.
+              </p>
+              <p class="product-card__price">
+                43 900 ₽
+                <del class="product-card__old-price">49 900 ₽</del>
+              </p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=core-i7-14700k"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Процессор Intel Core i7-14700K LGA1700 BOX"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 6. Процессор Ryzen 5 7500F -->
+            <article
+              class="product-card product-card--new"
+              data-category="cpu"
+              data-badge="new"
+              data-price="15990"
+            >
+              <span class="product-card__badge">Новинка</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/cpu-ryzen5.webp"
+                  width="320"
+                  height="200"
+                  alt="Процессор AMD Ryzen 5 7500F для платформы AM5"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 4.9 (65)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Процессор AMD Ryzen 5 7500F AM5
+              </h3>
+              <p class="product-card__description">
+                6 ядер / 12 потоков, до 5.0 ГГц, поддержка DDR5 OEM.
+              </p>
+              <p class="product-card__price">15 990 ₽</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=ryzen-5-7500f"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Процессор AMD Ryzen 5 7500F AM5 OEM"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 7. iPhone 16 Pro -->
+            <article
+              class="product-card product-card--new"
+              data-category="phones"
+              data-badge="new"
+              data-price="119990"
+            >
+              <span class="product-card__badge">Новинка</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/phone-iphone16.webp"
+                  width="320"
+                  height="200"
+                  alt="Смартфон Apple iPhone 16 Pro 256GB в корпусе цвета Натуральный Титан с тройной камерой"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 5.0 (54)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Apple iPhone 16 Pro 256GB Titanium
+              </h3>
+              <p class="product-card__description">
+                6.3" OLED 120 Гц, A18 Pro, nano-SIM + eSIM.
+              </p>
+              <p class="product-card__price">119 990 ₽</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=iphone-16-pro"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Смартфон Apple iPhone 16 Pro 256GB Natural Titanium"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 8. Samsung Galaxy S24 Ultra -->
+            <article
+              class="product-card product-card--discount"
+              data-category="phones"
+              data-badge="discount"
+              data-price="94990"
+            >
+              <span class="product-card__badge">Скидка -15%</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/phone-s24.webp"
+                  width="320"
+                  height="200"
+                  alt="Смартфон Samsung Galaxy S24 Ultra в титаново-сером корпусе со стилусом S Pen"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 4.9 (39)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Samsung Galaxy S24 Ultra 12/256GB
+              </h3>
+              <p class="product-card__description">
+                Snapdragon 8 Gen 3, S Pen, камера 200 МП, титановый корпус.
+              </p>
+              <p class="product-card__price">
+                94 990 ₽
+                <del class="product-card__old-price">111 990 ₽</del>
+              </p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=galaxy-s24-ultra"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Смартфон Samsung Galaxy S24 Ultra 12/256GB Titanium Gray"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 9. Xiaomi 14 Ultra -->
+            <article
+              class="product-card product-card--new"
+              data-category="phones"
+              data-badge="new"
+              data-price="99990"
+            >
+              <span class="product-card__badge">Новинка</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/phone-xiaomi14.webp"
+                  width="320"
+                  height="200"
+                  alt="Смартфон Xiaomi 14 Ultra чёрного цвета с крупным круглым блоком камер Leica"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 4.8 (22)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Xiaomi 14 Ultra 16/512GB Black
+              </h3>
+              <p class="product-card__description">
+                Камера Leica Summilux 1", зарядка 90 Вт в комплекте.
+              </p>
+              <p class="product-card__price">99 990 ₽</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=xiaomi-14-ultra"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Смартфон Xiaomi 14 Ultra 16/512GB Black"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 10. SSD Samsung 990 PRO 2TB -->
+            <article
+              class="product-card product-card--featured"
+              data-category="peripherals"
+              data-badge="hit"
+              data-price="19490"
+            >
+              <span class="product-card__badge">Хит</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/ssd-990pro.webp"
+                  width="320"
+                  height="200"
+                  alt="Твердотельный накопитель Samsung 990 PRO 2TB формата M.2 2280 NVMe"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 5.0 (73)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                SSD Samsung 990 PRO 2TB M.2 NVMe
+              </h3>
+              <p class="product-card__description">
+                PCIe 4.0 x4, скорость чтения до 7450 МБ/с, для ПК и PS5.
+              </p>
+              <p class="product-card__price">19 490 ₽</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=ssd-990-pro"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="SSD-накопитель Samsung 990 PRO 2TB M.2 NVMe"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 11. Клавиатура Keychron K2 Pro -->
+            <article
+              class="product-card product-card--discount"
+              data-category="peripherals"
+              data-badge="discount"
+              data-price="10990"
+            >
+              <span class="product-card__badge">Скидка -15%</span>
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/keyboard-keychron.webp"
+                  width="320"
+                  height="200"
+                  alt="Беспроводная механическая клавиатура Keychron K2 Pro формата 75% с тёмными и оранжевыми клавишами"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 4.8 (29)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Клавиатура Keychron K2 Pro QMK/VIA
+              </h3>
+              <p class="product-card__description">
+                Механика 75%, Hot-Swap, PBT-кейкапы, Bluetooth / USB-C.
+              </p>
+              <p class="product-card__price">
+                10 990 ₽
+                <del class="product-card__old-price">12 990 ₽</del>
+              </p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=keyboard-keychron"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Клавиатура Keychron K2 Pro QMK/VIA Wireless RGB"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+
+            <!-- 12. Игровая мышь Logitech G PRO X SUPERLIGHT 2 -->
+            <article
+              class="product-card"
+              data-category="peripherals"
+              data-badge=""
+              data-price="14490"
+            >
+              <div class="product-card__image-wrap">
+                <img
+                  class="product-card__image"
+                  src="images/mouse-superlight.webp"
+                  width="320"
+                  height="200"
+                  alt="Ультралёгкая беспроводная игровая мышь Logitech G PRO X SUPERLIGHT 2 чёрного цвета"
+                />
+              </div>
+              <div class="product-card__meta">
+                <span class="product-card__rating">
+                  <span aria-hidden="true">★</span> 4.9 (44)
+                </span>
+                <span class="product-card__status">В наличии</span>
+              </div>
+              <h3 class="product-card__title">
+                Logitech G PRO X SUPERLIGHT 2 Black
+              </h3>
+              <p class="product-card__description">
+                Вес 60 г, сенсор HERO 2, LIGHTSPEED 4000 Гц, USB-C.
+              </p>
+              <p class="product-card__price">14 490 ₽</p>
+              <div class="product-card__actions">
+                <a
+                  class="button button--secondary"
+                  href="product.html?id=mouse-superlight"
+                >
+                  Подробнее
+                </a>
+                <button
+                  class="button button--primary product-card__button"
+                  type="button"
+                  data-product="Игровая мышь Logitech G PRO X SUPERLIGHT 2 Black"
+                >
+                  Заказать
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="catalog-empty" id="catalog-empty" hidden>
+            <p>
+              По выбранным параметрам товары не найдены. Попробуйте изменить
+              диапазон цены или сбросить фильтры.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <p
+        class="success-message"
+        id="success-message"
+        role="status"
+        aria-live="polite"
+        hidden
+      ></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__grid">
+          <div>
+            <a class="site-footer__brand" href="index.html">Горбушка Тех</a>
+            <p class="site-footer__desc">
+              Магазин компьютерных комплектующих, игровых видеокарт, процессоров
+              и оригинальных смартфонов в Москве.
+            </p>
+            <p class="site-footer__hours">
+              Режим работы: ежедневно 10:00–21:00
             </p>
           </div>
 
-          <div class="products-grid">
-            <!-- Товар 1 -->
-            <article class="product-card product-card--featured">
-              <span class="product-card__badge">Хит</span>
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 4.8 (34)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">Беспроводная мышь Pro</h3>
-              <p class="product-card__description">
-                Эргономичный оптический сенсор 16000 DPI, до 70 ч работы.
-              </p>
-              <p class="product-card__price">Цена: 2 490 руб.</p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="mouse"
-                  href="product.html?id=mouse"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="Беспроводная мышь Pro"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 2 -->
-            <article class="product-card product-card--discount">
-              <span class="product-card__badge">Скидка -20%</span>
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 4.9 (52)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">Механическая клавиатура RGB</h3>
-              <p class="product-card__description">
-                Красные свитчи, Hot-Swap, настраиваемая подсветка клавиш.
-              </p>
-              <p class="product-card__price">
-                Цена: 4 800 руб.
-                <del style="color: var(--color-muted); font-size: 14px"
-                  >6 000 руб.</del
-                >
-              </p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="keyboard"
-                  href="product.html?id=keyboard"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="Механическая клавиатура RGB"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 3 -->
-            <article class="product-card product-card--new">
-              <span class="product-card__badge">Новинка</span>
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 4.7 (19)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">Беспроводные наушники ANC</h3>
-              <p class="product-card__description">
-                Активное шумоподавление, микрофон студийного уровня, Bluetooth
-                5.3.
-              </p>
-              <p class="product-card__price">Цена: 5 990 руб.</p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="headphones"
-                  href="product.html?id=headphones"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="Беспроводные наушники ANC"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 4 -->
-            <article class="product-card">
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 4.6 (28)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">Веб-камера Ultra HD 2K</h3>
-              <p class="product-card__description">
-                Автофокус, встроенная шторка приватности и двойной микрофон.
-              </p>
-              <p class="product-card__price">Цена: 3 600 руб.</p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="webcam"
-                  href="product.html?id=webcam"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="Веб-камера Ultra HD 2K"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 5 -->
-            <article class="product-card product-card--discount">
-              <span class="product-card__badge">Скидка -15%</span>
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 4.9 (41)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">USB-C Hub 8-in-1</h3>
-              <p class="product-card__description">
-                HDMI 4K, Power Delivery 100W, картридер SD/microSD, 3x USB 3.0.
-              </p>
-              <p class="product-card__price">
-                Цена: 2 890 руб.
-                <del style="color: var(--color-muted); font-size: 14px"
-                  >3 400 руб.</del
-                >
-              </p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="hub"
-                  href="product.html?id=hub"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="USB-C Hub 8-in-1"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 6 -->
-            <article class="product-card product-card--featured">
-              <span class="product-card__badge">Хит</span>
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 5.0 (64)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">Подставка для ноутбука Pro</h3>
-              <p class="product-card__description">
-                Алюминиевый корпус, регулировка высоты, пассивное охлаждение.
-              </p>
-              <p class="product-card__price">Цена: 1 950 руб.</p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="stand"
-                  href="product.html?id=stand"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="Подставка для ноутбука Pro"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 7 -->
-            <article class="product-card product-card--featured">
-              <span class="product-card__badge">Хит</span>
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 4.8 (39)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">Беспроводная мышь Pro (Black)</h3>
-              <p class="product-card__description">
-                Эргономичный оптический сенсор 16000 DPI, до 70 ч работы. Цвет:
-                черный.
-              </p>
-              <p class="product-card__price">Цена: 2 590 руб.</p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="mouse"
-                  href="product.html?id=mouse"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="Беспроводная мышь Pro (Black)"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 8 -->
-            <article class="product-card product-card--discount">
-              <span class="product-card__badge">Скидка -25%</span>
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 4.9 (48)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">
-                Механическая клавиатура RGB (White)
-              </h3>
-              <p class="product-card__description">
-                Синие кликающие свитчи, Hot-Swap, настраиваемая подсветка
-                клавиш.
-              </p>
-              <p class="product-card__price">
-                Цена: 4 650 руб.
-                <del style="color: var(--color-muted); font-size: 14px"
-                  >6 200 руб.</del
-                >
-              </p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="keyboard"
-                  href="product.html?id=keyboard"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="Механическая клавиатура RGB (White)"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 9 -->
-            <article class="product-card product-card--new">
-              <span class="product-card__badge">Новинка</span>
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 4.8 (22)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">
-                Беспроводные наушники ANC Plus
-              </h3>
-              <p class="product-card__description">
-                Активное шумоподавление, микрофон студийного уровня, Bluetooth
-                5.4.
-              </p>
-              <p class="product-card__price">Цена: 6 290 руб.</p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="headphones"
-                  href="product.html?id=headphones"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="Беспроводные наушники ANC Plus"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 10 -->
-            <article class="product-card">
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 4.7 (33)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">Веб-камера Ultra HD 4K</h3>
-              <p class="product-card__description">
-                Автофокус, встроенная шторка приватности и двойной
-                стерео-микрофон.
-              </p>
-              <p class="product-card__price">Цена: 4 200 руб.</p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="webcam"
-                  href="product.html?id=webcam"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="Веб-камера Ultra HD 4K"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 11 -->
-            <article class="product-card product-card--discount">
-              <span class="product-card__badge">Скидка -10%</span>
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 4.9 (57)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">USB-C Hub 10-in-1 Pro</h3>
-              <p class="product-card__description">
-                HDMI 4K, Gigabit Ethernet, Power Delivery 100W, 4x USB 3.0.
-              </p>
-              <p class="product-card__price">
-                Цена: 3 150 руб.
-                <del style="color: var(--color-muted); font-size: 14px"
-                  >3 500 руб.</del
-                >
-              </p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="hub"
-                  href="product.html?id=hub"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="USB-C Hub 10-in-1 Pro"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
-
-            <!-- Товар 12 -->
-            <article class="product-card product-card--featured">
-              <span class="product-card__badge">Хит</span>
-              <div class="product-card__meta">
-                <span class="product-card__rating">★ 5.0 (71)</span>
-                <span class="product-card__status">В наличии</span>
-              </div>
-              <h3 class="product-card__title">
-                Подставка для ноутбука Pro Max
-              </h3>
-              <p class="product-card__description">
-                Усиленный алюминиевый корпус, регулировка высоты для ноутбуков
-                до 17".
-              </p>
-              <p class="product-card__price">Цена: 2 190 руб.</p>
-              <div class="product-card__actions">
-                <a
-                  class="button button--secondary product-detail-link"
-                  data-id="stand"
-                  href="product.html?id=stand"
-                  >Подробнее</a
-                >
-                <button
-                  class="button button--primary product-card__button"
-                  type="button"
-                  data-product="Подставка для ноутбука Pro Max"
-                >
-                  Заказать
-                </button>
-              </div>
-            </article>
+          <div>
+            <h2 class="site-footer__heading">Каталог</h2>
+            <ul class="site-footer__list">
+              <li><a href="catalog.html?cat=gpu">Видеокарты</a></li>
+              <li><a href="catalog.html?cat=cpu">Процессоры</a></li>
+              <li><a href="catalog.html?cat=phones">Смартфоны</a></li>
+              <li>
+                <a href="catalog.html?cat=peripherals">SSD и периферия</a>
+              </li>
+            </ul>
           </div>
-        </section>
-      </section>
-    </main>
 
-    <footer>
-      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+          <nav class="site-footer__nav" aria-label="Разделы сайта">
+            <h2 class="site-footer__heading">Покупателям</h2>
+            <ul class="site-footer__list">
+              <li><a href="about.html">О магазине</a></li>
+              <li><a href="delivery.html">Доставка и оплата</a></li>
+              <li><a href="order.html">Оформление заявки</a></li>
+              <li><a href="contacts.html">Контакты и схема проезда</a></li>
+            </ul>
+          </nav>
+
+          <div>
+            <h2 class="site-footer__heading">Павильон на Горбушке</h2>
+            <address class="site-footer__contacts">
+              <span>
+                г. Москва, Багратионовский проезд, д. 7, корп. 3, ТЦ «Горбушкин
+                Двор», пав. B2-114
+              </span>
+              <a href="tel:+74957482590">+7 (495) 748-25-90</a>
+              <a href="mailto:info@gorbushkatech.ru">info@gorbushkatech.ru</a>
+              <a href="contacts.html#map">Смотреть на Яндекс Картах</a>
+            </address>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>
+            &copy; 2026 Горбушка Тех (учебный проект, дисциплина «Фронтенд и
+            бэкенд разработка»).
+          </p>
+          <div class="site-footer__payments">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Наличные</span>
+            <span class="payment-badge">Счёт для юр. лиц</span>
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <!-- Модальное окно оформления заявки -->
     <dialog
       class="order-dialog"
       id="order-dialog"
       aria-labelledby="order-dialog-title"
     >
       <h2 class="order-dialog__title" id="order-dialog-title">
-        Оформление заявки
+        Оформление брони / заявки
       </h2>
+
+      <p class="order-dialog__product" id="order-dialog-product" hidden>
+        Выбранный товар: <strong id="order-dialog-product-name"></strong>
+      </p>
+
       <form
         class="order-form"
         id="order-form"
@@ -537,6 +885,7 @@
             name="name"
             type="text"
             placeholder="Введите ваше имя"
+            autocomplete="name"
             required
           />
         </div>
@@ -549,6 +898,7 @@
             name="email"
             type="email"
             placeholder="example@mail.ru"
+            autocomplete="email"
             required
           />
         </div>
@@ -562,16 +912,19 @@
             type="tel"
             inputmode="tel"
             placeholder="+7 (900) 000-00-00"
-            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            autocomplete="tel"
+            aria-describedby="phone-hint"
             required
           />
-          <small>Формат: +7 (900) 000-00-00</small>
+          <small class="order-form__hint" id="phone-hint">
+            Формат: +7 (900) 000-00-00
+          </small>
         </div>
 
         <div class="form-field">
-          <label class="order-form__label" for="order-date"
-            >Желаемая дата связи</label
-          >
+          <label class="order-form__label" for="order-date">
+            Желаемая дата визита / доставки
+          </label>
           <input
             class="order-form__input"
             id="order-date"
@@ -581,28 +934,32 @@
         </div>
 
         <div class="form-field">
-          <label for="order-topic">Тема заявки</label>
+          <label class="order-form__label" for="order-topic">Тема заявки</label>
           <select
+            class="order-form__select"
             id="order-topic"
             name="topic"
             required
-            class="order-form__select"
           >
-            <option value="">Выберите тему</option>
-            <option value="product" selected>Заказ товара</option>
-            <option value="consultation">Консультация</option>
-            <option value="delivery">Доставка</option>
+            <option value="">Выберите способ получения</option>
+            <option value="pickup" selected>
+              Самовывоз в ТЦ «Горбушкин Двор» (пав. B2-114)
+            </option>
+            <option value="delivery">Доставка курьером / СДЭК</option>
+            <option value="consultation">Консультация и подбор</option>
           </select>
         </div>
 
         <div class="form-field">
-          <label for="order-comment">Комментарий</label>
+          <label class="order-form__label" for="order-comment">
+            Комментарий
+          </label>
           <textarea
+            class="order-form__textarea"
             id="order-comment"
             name="comment"
             rows="3"
-            placeholder="Укажите пожелания или адрес доставки"
-            class="order-form__textarea"
+            placeholder="Нужна ли проверка на стенде или адрес доставки"
           ></textarea>
         </div>
 
@@ -614,7 +971,7 @@
               type="checkbox"
               required
             />
-            Я согласен на обработку данных
+            Я согласен на обработку персональных данных
           </label>
         </div>
 
@@ -633,19 +990,13 @@
       </form>
     </dialog>
 
-    <p class="success-message" id="success-message" hidden>
-      Заявка успешно отправлена!
-    </p>
-
-    <!-- Кнопка «Наверх» -->
     <a
       href="#top"
       class="scroll-top"
       id="scroll-top"
       aria-label="Вернуться в начало страницы"
-      title="Наверх"
     >
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
       </svg>
     </a>

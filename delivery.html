@@ -5,18 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Условия доставки и способы оплаты заказов в учебном интернет-магазине."
+      content="Самовывоз в ТЦ Горбушкин Двор, срочная курьерская доставка по Москве и отправка СДЭК по России."
     />
-    <title>Доставка и оплата — Учебный интернет-магазин</title>
+    <title>Доставка и оплата — Горбушка Тех</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
   </head>
-  <body id="top">
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a class="site-header__logo" href="index.html">ShopProject</a>
 
-        <nav class="site-nav" aria-label="Основная навигация">
+  <body id="top">
+    <a class="skip-link" href="#main-content">
+      Перейти к основному содержимому
+    </a>
+
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="top-bar__inner">
+          <span>
+            ТЦ «Горбушкин Двор», Багратионовский пр., 7 к3, пав. B2-114 · м.
+            Багратионовская · Ежедневно 10:00–21:00
+          </span>
+          <a class="top-bar__phone" href="tel:+74957482590">
+            +7 (495) 748-25-90
+          </a>
+        </div>
+      </div>
+
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="index.html">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <rect x="9" y="9" width="6" height="6" />
+            <path
+              d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"
+            />
+          </svg>
+          <span>Горбушка Тех</span>
+          <span class="site-header__logo-badge">B2-114</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Меню
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
             <li class="site-nav__item">
               <a class="site-nav__link" href="index.html">Главная</a>
@@ -25,14 +71,19 @@
               <a class="site-nav__link" href="catalog.html">Каталог</a>
             </li>
             <li class="site-nav__item">
-              <a class="site-nav__link" href="about.html">О нас</a>
+              <a class="site-nav__link" href="about.html">О магазине</a>
             </li>
             <li class="site-nav__item">
               <a
                 class="site-nav__link site-nav__link--active"
                 href="delivery.html"
-                >Доставка</a
+                aria-current="page"
               >
+                Доставка
+              </a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="order.html">Заявка</a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="contacts.html">Контакты</a>
@@ -42,86 +93,147 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a class="breadcrumbs__link" href="index.html">Главная</a>
-        <span class="breadcrumbs__current">Доставка и оплата</span>
+        <span class="breadcrumbs__current" aria-current="page">
+          Доставка и оплата
+        </span>
       </nav>
 
       <section class="section">
         <h1>Доставка и оплата</h1>
         <p>
-          Мы предлагаем несколько удобных вариантов доставки и безопасных
-          способов оплаты заказов.
+          Забирайте заказ бесплатно в нашем павильоне на Горбушке или
+          заказывайте быструю доставку по Москве и регионам России.
         </p>
 
         <h2>Способы получения заказа</h2>
         <div class="delivery-options-grid">
           <article class="delivery-option">
-            <span class="delivery-option__badge">Быстро</span>
-            <h3>Курьерская доставка</h3>
+            <span class="delivery-option__badge">Рекомендуем</span>
+            <h3>Самовывоз на Горбушке</h3>
             <p>
-              Доставка до двери на следующий рабочий день в удобный временной
-              интервал.
+              ТЦ «Горбушкин Двор», пав. B2-114 (м. Багратионовская). Проверка на
+              тестовом стенде до оплаты.
             </p>
-            <p><strong>Срок:</strong> 1-2 дня</p>
-            <p>
-              <strong>Стоимость:</strong> 350 руб. (Бесплатно при заказе от 5
-              000 руб.)
-            </p>
+            <p><strong>Срок:</strong> в день заказа (бронь 24 часа)</p>
+            <p><strong>Стоимость:</strong> Бесплатно</p>
           </article>
 
           <article class="delivery-option">
-            <span class="delivery-option__badge">Популярно</span>
-            <h3>Пункты выдачи заказов</h3>
-            <p>Более 3 000 пунктов выдачи СДЭК и Boxberry по всей России.</p>
-            <p><strong>Срок:</strong> 2-4 дня</p>
-            <p><strong>Стоимость:</strong> от 190 руб.</p>
+            <span class="delivery-option__badge">Экспресс</span>
+            <h3>Курьером по Москве</h3>
+            <p>
+              Доставка собственной курьерской службой в пределах МКАД и ближнего
+              Подмосковья.
+            </p>
+            <p><strong>Срок:</strong> от 3 часов в день заказа</p>
+            <p><strong>Стоимость:</strong> 450 ₽ (Бесплатно от 50 000 ₽)</p>
           </article>
 
           <article class="delivery-option">
-            <span class="delivery-option__badge">Экономно</span>
-            <h3>Почта России</h3>
+            <span class="delivery-option__badge">По России</span>
+            <h3>СДЭК со страховкой</h3>
             <p>
-              Отправка в любое почтовое отделение страны с возможностью
-              отслеживания по трек-номеру.
+              Надёжная упаковка в воздушно-пузырьковую плёнку и жёсткий короб
+              для безопасной пересылки комплектующих.
             </p>
-            <p><strong>Срок:</strong> 4-8 дней</p>
-            <p><strong>Стоимость:</strong> от 250 руб.</p>
+            <p><strong>Срок:</strong> 2–5 рабочих дней</p>
+            <p><strong>Стоимость:</strong> по тарифам СДЭК (от 350 ₽)</p>
           </article>
         </div>
 
         <h2>Варианты оплаты</h2>
         <ul>
           <li>
-            <strong>Банковской картой онлайн:</strong> Visa, MasterCard, МИР без
-            комиссии;
+            <strong>Система быстрых платежей (СБП) и наличные:</strong> оплата
+            при получении в павильоне или курьеру без комиссии;
           </li>
           <li>
-            <strong>Система быстрых платежей (СБП):</strong> мгновенная оплата
-            по QR-коду;
+            <strong>Банковские карты:</strong> МИР, Visa, MasterCard через
+            терминал или онлайн;
           </li>
           <li>
-            <strong>При получении:</strong> наличными или картой курьеру / в
-            пункте выдачи.
+            <strong>Для юридических лиц:</strong> выставление счёта и полный
+            пакет закрывающих документов (УПД).
           </li>
         </ul>
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__grid">
+          <div>
+            <a class="site-footer__brand" href="index.html">Горбушка Тех</a>
+            <p class="site-footer__desc">
+              Магазин компьютерных комплектующих, игровых видеокарт, процессоров
+              и оригинальных смартфонов в Москве.
+            </p>
+            <p class="site-footer__hours">
+              Режим работы: ежедневно 10:00–21:00
+            </p>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Каталог</h2>
+            <ul class="site-footer__list">
+              <li><a href="catalog.html?cat=gpu">Видеокарты</a></li>
+              <li><a href="catalog.html?cat=cpu">Процессоры</a></li>
+              <li><a href="catalog.html?cat=phones">Смартфоны</a></li>
+              <li>
+                <a href="catalog.html?cat=peripherals">SSD и периферия</a>
+              </li>
+            </ul>
+          </div>
+
+          <nav class="site-footer__nav" aria-label="Разделы сайта">
+            <h2 class="site-footer__heading">Покупателям</h2>
+            <ul class="site-footer__list">
+              <li><a href="about.html">О магазине</a></li>
+              <li><a href="delivery.html">Доставка и оплата</a></li>
+              <li><a href="order.html">Оформление заявки</a></li>
+              <li><a href="contacts.html">Контакты и схема проезда</a></li>
+            </ul>
+          </nav>
+
+          <div>
+            <h2 class="site-footer__heading">Павильон на Горбушке</h2>
+            <address class="site-footer__contacts">
+              <span>
+                г. Москва, Багратионовский проезд, д. 7, корп. 3, ТЦ «Горбушкин
+                Двор», пав. B2-114
+              </span>
+              <a href="tel:+74957482590">+7 (495) 748-25-90</a>
+              <a href="mailto:info@gorbushkatech.ru">info@gorbushkatech.ru</a>
+              <a href="contacts.html#map">Смотреть на Яндекс Картах</a>
+            </address>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>
+            &copy; 2026 Горбушка Тех (учебный проект, дисциплина «Фронтенд и
+            бэкенд разработка»).
+          </p>
+          <div class="site-footer__payments">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Наличные</span>
+            <span class="payment-badge">Счёт для юр. лиц</span>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <a
       href="#top"
       class="scroll-top"
       id="scroll-top"
-      aria-label="Наверх"
-      title="Наверх"
+      aria-label="Вернуться в начало страницы"
     >
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
       </svg>
     </a>

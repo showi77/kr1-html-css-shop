@@ -3,33 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Учебный интернет-магазин</title>
+    <meta
+      name="description"
+      content="Горбушка Тех — магазин компьютерных комплектующих, видеокарт, процессоров и смартфонов в ТЦ «Горбушкин Двор», Москва."
+    />
+    <title>Горбушка Тех — магазин техники, комплектующих и смартфонов</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Учебный интернет-магазин" />
+    <meta
+      property="og:title"
+      content="Горбушка Тех — магазин техники в ТЦ «Горбушкин Двор»"
+    />
     <meta
       property="og:description"
-      content="Учебный frontend-проект интернет-магазина."
+      content="Видеокарты, процессоры, смартфоны и периферия в наличии с проверкой и гарантией."
     />
     <meta
       property="og:image"
-      content="https://username.github.io/kr1-html-css-shop/images/preview.png"
+      content="https://showi77.github.io/kr1-html-css-shop/images/preview.png"
     />
   </head>
 
   <body id="top">
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a class="site-header__logo" href="index.html">ShopProject</a>
+    <a class="skip-link" href="#main-content">
+      Перейти к основному содержимому
+    </a>
 
-        <nav class="site-nav" aria-label="Основная навигация">
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="top-bar__inner">
+          <span>
+            ТЦ «Горбушкин Двор», Багратионовский пр., 7 к3, пав. B2-114 · м.
+            Багратионовская · Ежедневно 10:00–21:00
+          </span>
+          <a class="top-bar__phone" href="tel:+74957482590">
+            +7 (495) 748-25-90
+          </a>
+        </div>
+      </div>
+
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="index.html">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <rect x="9" y="9" width="6" height="6" />
+            <path
+              d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"
+            />
+          </svg>
+          <span>Горбушка Тех</span>
+          <span class="site-header__logo-badge">B2-114</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Меню
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
             <li class="site-nav__item">
               <a
                 class="site-nav__link site-nav__link--active"
                 href="index.html"
+                aria-current="page"
               >
                 Главная
               </a>
@@ -38,144 +91,254 @@
               <a class="site-nav__link" href="catalog.html">Каталог</a>
             </li>
             <li class="site-nav__item">
+              <a class="site-nav__link" href="about.html">О магазине</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="delivery.html">Доставка</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="order.html">Заявка</a>
+            </li>
+            <li class="site-nav__item">
               <a class="site-nav__link" href="contacts.html">Контакты</a>
-            </li>
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="index.html#advantages">
-                Преимущества
-              </a>
-            </li>
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="index.html#popular">
-                Популярные товары
-              </a>
-            </li>
-            <li class="site-nav__item">
-              <a class="site-nav__link" href="index.html#contacts">
-                Обратная связь
-              </a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero">
-        <h1>Учебный интернет-магазин</h1>
+        <span class="hero__eyebrow">ТЦ «Горбушкин Двор» · павильон B2-114</span>
+        <h1>Комплектующие для ПК, видеокарты и смартфоны в Москве</h1>
         <p>
-          Это стартовая страница учебного frontend-проекта. В дальнейшем на её
-          основе будет разработан многостраничный сайт интернет-магазина или
-          каталога услуг.
+          Оригинальные видеокарты NVIDIA и AMD, процессоры Ryzen и Intel,
+          смартфоны Apple и Samsung с проверкой на стенде перед покупкой,
+          официальной гарантией и самовывозом в 5 минутах от метро
+          «Багратионовская».
         </p>
-        <a class="button" href="#popular">Перейти к товарам</a>
+        <div class="hero__actions">
+          <a class="button button--light" href="catalog.html">
+            Открыть каталог товаров
+          </a>
+          <a class="button button--primary" href="contacts.html#map">
+            Как нас найти на карте
+          </a>
+        </div>
       </section>
 
       <section class="section" id="advantages">
-        <h2>Преимущества проекта</h2>
+        <h2>Почему покупают у нас на Горбушке</h2>
 
-        <ul class="advantages-list">
-          <li>понятная HTML-структура;</li>
-          <li>семантические блоки страницы;</li>
-          <li>подключение внешнего CSS-файла;</li>
-          <li>подготовка к разработке многостраничного сайта.</li>
+        <ul class="advantages-grid">
+          <li class="advantage-card">
+            <h3 class="advantage-card__title">Тест-стенд в павильоне</h3>
+            <p class="advantage-card__text">
+              Проверяем видеокарты в FurMark/3DMark, серийные номера и пломбы
+              прямо при вас до оплаты.
+            </p>
+          </li>
+          <li class="advantage-card">
+            <h3 class="advantage-card__title">Честные цены и наличие</h3>
+            <p class="advantage-card__text">
+              Прямые поставки без витринных наценок. Все популярные позиции
+              лежат на складе в павильоне.
+            </p>
+          </li>
+          <li class="advantage-card">
+            <h3 class="advantage-card__title">Гарантия до 36 месяцев</h3>
+            <p class="advantage-card__text">
+              Выдаём чек и фирменный гарантийный талон. Быстрая замена в
+              собственном сервис-центре.
+            </p>
+          </li>
+          <li class="advantage-card">
+            <h3 class="advantage-card__title">Доставка за 3 часа</h3>
+            <p class="advantage-card__text">
+              Срочный курьер по Москве и области, бесплатный самовывоз из ТЦ
+              «Горбушкин Двор», отправка СДЭК.
+            </p>
+          </li>
         </ul>
       </section>
 
       <section class="section" id="popular">
-        <h2>Популярные товары</h2>
+        <h2>Популярные товары в наличии</h2>
 
         <div class="products-grid">
           <article class="product-card product-card--featured">
             <span class="product-card__badge">Хит</span>
-            <h3 class="product-card__title">Товар 1</h3>
+            <div class="product-card__image-wrap">
+              <img
+                class="product-card__image"
+                src="images/gpu-rtx4070.webp"
+                width="320"
+                height="200"
+                alt="Видеокарта MSI GeForce RTX 4070 SUPER GAMING X SLIM 12GB с системой охлаждения из трёх вентиляторов"
+              />
+            </div>
+            <div class="product-card__meta">
+              <span class="product-card__rating">
+                <span aria-hidden="true">★</span> 4.9 (48)
+              </span>
+              <span class="product-card__status">В наличии</span>
+            </div>
+            <h3 class="product-card__title">
+              Видеокарта MSI GeForce RTX 4070 SUPER 12GB
+            </h3>
             <p class="product-card__description">
-              Краткое описание учебного товара.
+              GAMING X SLIM, GDDR6X 192-bit, DLSS 3.5, проверка на стенде.
             </p>
-            <p class="product-card__price">Цена: 1000 руб.</p>
-            <button
-              class="button product-card__button"
-              type="button"
-              data-product="Товар 1"
-            >
-              Заказать
-            </button>
+            <p class="product-card__price">68 990 ₽</p>
+            <div class="product-card__actions">
+              <a
+                class="button button--secondary"
+                href="product.html?id=rtx-4070-super"
+              >
+                Подробнее
+              </a>
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-product="Видеокарта MSI GeForce RTX 4070 SUPER GAMING X SLIM 12GB"
+              >
+                Заказать
+              </button>
+            </div>
           </article>
 
-          <article class="product-card product-card--discount">
-            <span class="product-card__badge">Скидка</span>
-            <h3 class="product-card__title">Товар 2</h3>
+          <article class="product-card product-card--featured">
+            <span class="product-card__badge">Хит</span>
+            <div class="product-card__image-wrap">
+              <img
+                class="product-card__image"
+                src="images/cpu-ryzen7.webp"
+                width="320"
+                height="200"
+                alt="Процессор AMD Ryzen 7 7800X3D для сокета AM5 с технологией 3D V-Cache"
+              />
+            </div>
+            <div class="product-card__meta">
+              <span class="product-card__rating">
+                <span aria-hidden="true">★</span> 5.0 (84)
+              </span>
+              <span class="product-card__status">В наличии</span>
+            </div>
+            <h3 class="product-card__title">
+              Процессор AMD Ryzen 7 7800X3D AM5
+            </h3>
             <p class="product-card__description">
-              Краткое описание учебного товара.
+              8 ядер / 16 потоков, 96 МБ кэш L3 (3D V-Cache), до 5.0 ГГц.
             </p>
-            <p class="product-card__price">
-              Цена: 1300 руб.
-              <del style="color: var(--color-muted); font-size: 14px"
-                >1500 руб.</del
+            <p class="product-card__price">41 900 ₽</p>
+            <div class="product-card__actions">
+              <a
+                class="button button--secondary"
+                href="product.html?id=ryzen-7-7800x3d"
               >
-            </p>
-            <button
-              class="button product-card__button"
-              type="button"
-              data-product="Товар 2"
-            >
-              Заказать
-            </button>
+                Подробнее
+              </a>
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-product="Процессор AMD Ryzen 7 7800X3D AM5 OEM"
+              >
+                Заказать
+              </button>
+            </div>
           </article>
 
           <article class="product-card product-card--new">
             <span class="product-card__badge">Новинка</span>
-            <h3 class="product-card__title">Товар 3</h3>
+            <div class="product-card__image-wrap">
+              <img
+                class="product-card__image"
+                src="images/phone-iphone16.webp"
+                width="320"
+                height="200"
+                alt="Смартфон Apple iPhone 16 Pro 256GB в корпусе цвета Натуральный Титан с тройной камерой"
+              />
+            </div>
+            <div class="product-card__meta">
+              <span class="product-card__rating">
+                <span aria-hidden="true">★</span> 5.0 (54)
+              </span>
+              <span class="product-card__status">В наличии</span>
+            </div>
+            <h3 class="product-card__title">
+              Apple iPhone 16 Pro 256GB Natural Titanium
+            </h3>
             <p class="product-card__description">
-              Краткое описание учебного товара.
+              Чип A18 Pro, экран 120 Гц, nano-SIM + eSIM, проверка по IMEI.
             </p>
-            <p class="product-card__price">Цена: 2000 руб.</p>
-            <button
-              class="button product-card__button"
-              type="button"
-              data-product="Товар 3"
-            >
-              Заказать
-            </button>
+            <p class="product-card__price">119 990 ₽</p>
+            <div class="product-card__actions">
+              <a
+                class="button button--secondary"
+                href="product.html?id=iphone-16-pro"
+              >
+                Подробнее
+              </a>
+              <button
+                class="button button--primary product-card__button"
+                type="button"
+                data-product="Смартфон Apple iPhone 16 Pro 256GB Natural Titanium"
+              >
+                Заказать
+              </button>
+            </div>
           </article>
         </div>
       </section>
 
       <aside class="aside-info">
-        <h2>Информация для студентов</h2>
+        <h2>Подбор и сборка ПК в павильоне B2-114</h2>
         <p>
-          На следующих практических занятиях этот проект будет расширяться:
-          появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-          БЭМ-структура и адаптивная версия сайта.
+          Нужна помощь с подбором совместимых комплектующих (материнской платы,
+          DDR5-памяти, блока питания ATX 3.0) или апгрейд рабочего компьютера?
+          Оставьте заявку на консультацию или приезжайте в ТЦ «Горбушкин Двор» —
+          соберём и протестируем ПК за 1 день.
         </p>
+        <a class="button button--secondary" href="order.html">
+          Оставить заявку на подбор
+        </a>
       </aside>
+
       <section class="section" id="reviews">
-        <h2>Отзывы клиентов</h2>
+        <h2>Отзывы наших покупателей</h2>
         <div class="reviews-grid">
           <article class="review-card">
             <p class="review-card__author">Алексей Петров</p>
-            <div class="review-card__rating">4.5</div>
+            <div class="review-card__rating">
+              <span aria-hidden="true">★★★★★</span> 5.0
+            </div>
             <p class="review-card__text">
-              Отличный учебный проект! Все элементы интерфейса интуитивно
-              понятные и аккуратно сверстаны.
+              Брал RTX 4070 Super и Ryzen 7800X3D самовывозом на Горбушке.
+              Ребята сразу на месте проверили карту на стенде, всё показали и
+              выдали гарантийник.
             </p>
           </article>
 
           <article class="review-card">
             <p class="review-card__author">Елена Смирнова</p>
-            <div class="review-card__rating">4.0</div>
+            <div class="review-card__rating">
+              <span aria-hidden="true">★★★★★</span> 4.9
+            </div>
             <p class="review-card__text">
-              Очень удобно оформлять заявку через модальное окно. Код
-              структурирован по БЭМ.
+              Заказывали iPhone 16 Pro с доставкой по Москве. Курьер приехал
+              через два с половиной часа, коробка в заводских пломбах, IMEI
+              пробился сразу.
             </p>
           </article>
 
           <article class="review-card">
             <p class="review-card__author">Дмитрий Иванов</p>
-            <div class="review-card__rating">5.0</div>
+            <div class="review-card__rating">
+              <span aria-hidden="true">★★★★★</span> 5.0
+            </div>
             <p class="review-card__text">
-              Понравилась сетка каталога и адаптивные фильтры. Спасибо
-              разработчикам за сайт!
+              Удобно добираться от м. Багратионовская. Взял SSD Samsung 990 PRO
+              и клавиатуру Keychron — цена вышла заметно ниже крупных сетей.
             </p>
           </article>
         </div>
@@ -185,35 +348,111 @@
         <h2>Часто задаваемые вопросы</h2>
         <div class="faq-list">
           <details class="faq-item">
-            <summary>Как оформить заказ на сайте?</summary>
+            <summary>
+              Можно ли проверить видеокарту или смартфон до оплаты?
+            </summary>
             <p>
-              Вы можете выбрать товар в каталоге или на главной странице, нажать
-              кнопку «Заказать» и заполнить форму в появившемся модальном окне.
+              Да. В нашем павильоне B2-114 в ТЦ «Горбушкин Двор» оборудован
+              тестовый стенд. Мы вскрываем коробку при вас (после проверки
+              заводских пломб и серийных номеров) и тестируем устройство перед
+              оплатой.
             </p>
           </details>
 
           <details class="faq-item">
-            <summary>Какие способы оплаты поддерживаются?</summary>
+            <summary>
+              Как забронировать товар перед приездом на Горбушку?
+            </summary>
             <p>
-              В рамках данного учебного проекта платежи не обрабатываются
-              реальным образом, форма носит демонстрационный характер.
+              Нажмите кнопку «Заказать» у любого товара или заполните форму на
+              странице «Заявка». Бронь в павильоне держится бесплатно в течение
+              24 часов с фиксацией цены.
             </p>
           </details>
 
           <details class="faq-item">
-            <summary>Как связаться с поддержкой?</summary>
+            <summary>Какие способы оплаты вы принимаете?</summary>
             <p>
-              Перейдите на страницу «Контакты» в верхнем меню, где указаны
-              телефон, электронная почта и адрес учебного проекта.
+              Принимаем наличные, оплату по СБП (QR-код), банковскими картами
+              МИР / Visa / MasterCard, а также безналичный расчёт для
+              юридических лиц.
             </p>
           </details>
         </div>
       </section>
+
+      <p
+        class="success-message"
+        id="success-message"
+        role="status"
+        aria-live="polite"
+        hidden
+      ></p>
     </main>
 
-    <footer id="contacts">
-      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__grid">
+          <div>
+            <a class="site-footer__brand" href="index.html">Горбушка Тех</a>
+            <p class="site-footer__desc">
+              Магазин компьютерных комплектующих, игровых видеокарт, процессоров
+              и оригинальных смартфонов в Москве.
+            </p>
+            <p class="site-footer__hours">
+              Режим работы: ежедневно 10:00–21:00
+            </p>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Каталог</h2>
+            <ul class="site-footer__list">
+              <li><a href="catalog.html?cat=gpu">Видеокарты</a></li>
+              <li><a href="catalog.html?cat=cpu">Процессоры</a></li>
+              <li><a href="catalog.html?cat=phones">Смартфоны</a></li>
+              <li>
+                <a href="catalog.html?cat=peripherals">SSD и периферия</a>
+              </li>
+            </ul>
+          </div>
+
+          <nav class="site-footer__nav" aria-label="Разделы сайта">
+            <h2 class="site-footer__heading">Покупателям</h2>
+            <ul class="site-footer__list">
+              <li><a href="about.html">О магазине</a></li>
+              <li><a href="delivery.html">Доставка и оплата</a></li>
+              <li><a href="order.html">Оформление заявки</a></li>
+              <li><a href="contacts.html">Контакты и схема проезда</a></li>
+            </ul>
+          </nav>
+
+          <div>
+            <h2 class="site-footer__heading">Павильон на Горбушке</h2>
+            <address class="site-footer__contacts">
+              <span>
+                г. Москва, Багратионовский проезд, д. 7, корп. 3, ТЦ «Горбушкин
+                Двор», пав. B2-114
+              </span>
+              <a href="tel:+74957482590">+7 (495) 748-25-90</a>
+              <a href="mailto:info@gorbushkatech.ru">info@gorbushkatech.ru</a>
+              <a href="contacts.html#map">Смотреть на Яндекс Картах</a>
+            </address>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>
+            &copy; 2026 Горбушка Тех (учебный проект, дисциплина «Фронтенд и
+            бэкенд разработка»).
+          </p>
+          <div class="site-footer__payments">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Наличные</span>
+            <span class="payment-badge">Счёт для юр. лиц</span>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <dialog
@@ -222,8 +461,12 @@
       aria-labelledby="order-dialog-title"
     >
       <h2 class="order-dialog__title" id="order-dialog-title">
-        Оформление заявки
+        Оформление брони / заявки
       </h2>
+
+      <p class="order-dialog__product" id="order-dialog-product" hidden>
+        Выбранный товар: <strong id="order-dialog-product-name"></strong>
+      </p>
 
       <form
         class="order-form"
@@ -242,6 +485,7 @@
             name="name"
             type="text"
             placeholder="Введите ваше имя"
+            autocomplete="name"
             required
           />
         </div>
@@ -254,6 +498,7 @@
             name="email"
             type="email"
             placeholder="example@mail.ru"
+            autocomplete="email"
             required
           />
         </div>
@@ -267,14 +512,19 @@
             type="tel"
             inputmode="tel"
             placeholder="+7 (900) 000-00-00"
-            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            autocomplete="tel"
+            aria-describedby="phone-hint"
             required
           />
-          <small>Формат: +7 (900) 000-00-00</small>
+          <small class="order-form__hint" id="phone-hint">
+            Формат: +7 (900) 000-00-00
+          </small>
         </div>
 
         <div class="form-field">
-          <label class="order-form__label" for="order-date">Дата связи</label>
+          <label class="order-form__label" for="order-date">
+            Желаемая дата визита / доставки
+          </label>
           <input
             class="order-form__input"
             id="order-date"
@@ -284,22 +534,32 @@
         </div>
 
         <div class="form-field">
-          <label for="order-topic">Тема заявки</label>
-          <select id="order-topic" name="topic" required>
-            <option value="">Выберите тему</option>
-            <option value="product">Заказ товара</option>
-            <option value="consultation">Консультация</option>
-            <option value="delivery">Доставка</option>
+          <label class="order-form__label" for="order-topic">Тема заявки</label>
+          <select
+            class="order-form__select"
+            id="order-topic"
+            name="topic"
+            required
+          >
+            <option value="">Выберите способ получения</option>
+            <option value="pickup" selected>
+              Самовывоз в ТЦ «Горбушкин Двор» (пав. B2-114)
+            </option>
+            <option value="delivery">Доставка курьером / СДЭК</option>
+            <option value="consultation">Консультация и подбор</option>
           </select>
         </div>
 
         <div class="form-field">
-          <label for="order-comment">Комментарий</label>
+          <label class="order-form__label" for="order-comment">
+            Комментарий
+          </label>
           <textarea
+            class="order-form__textarea"
             id="order-comment"
             name="comment"
-            rows="4"
-            placeholder="Укажите дополнительную информацию"
+            rows="3"
+            placeholder="Нужна ли проверка на стенде или адрес доставки"
           ></textarea>
         </div>
 
@@ -311,7 +571,7 @@
               type="checkbox"
               required
             />
-            Я согласен на обработку данных
+            Я согласен на обработку персональных данных
           </label>
         </div>
 
@@ -330,17 +590,13 @@
       </form>
     </dialog>
 
-    <p class="success-message" id="success-message" hidden>
-      Форма успешно отправлена!
-    </p>
     <a
       href="#top"
       class="scroll-top"
       id="scroll-top"
       aria-label="Вернуться в начало страницы"
-      title="Наверх"
     >
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
       </svg>
     </a>

@@ -5,28 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Контактная информация учебного интернет-магазина."
+      content="Контакты магазина Горбушка Тех в ТЦ Горбушкин Двор (павильон B2-114) и интерактивная схема проезда на Яндекс Картах."
     />
-    <title>Контакты — Учебный интернет-магазин</title>
+    <title>Контакты и схема проезда — Горбушка Тех</title>
     <link rel="stylesheet" href="css/styles.css" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Учебный интернет-магазин" />
-    <meta
-      property="og:description"
-      content="Учебный frontend-проект интернет-магазина."
-    />
-    <meta
-      property="og:image"
-      content="https://username.github.io/kr1-html-css-shop/images/preview.png"
-    />
+    <script src="js/main.js" defer></script>
   </head>
-  <body>
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a class="site-header__logo" href="index.html">ShopProject</a>
 
-        <nav class="site-nav" aria-label="Основная навигация">
+  <body id="top">
+    <a class="skip-link" href="#main-content">
+      Перейти к основному содержимому
+    </a>
+
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="top-bar__inner">
+          <span>
+            ТЦ «Горбушкин Двор», Багратионовский пр., 7 к3, пав. B2-114 · м.
+            Багратионовская · Ежедневно 10:00–21:00
+          </span>
+          <a class="top-bar__phone" href="tel:+74957482590">
+            +7 (495) 748-25-90
+          </a>
+        </div>
+      </div>
+
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="index.html">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <rect x="9" y="9" width="6" height="6" />
+            <path
+              d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"
+            />
+          </svg>
+          <span>Горбушка Тех</span>
+          <span class="site-header__logo-badge">B2-114</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Меню
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
             <li class="site-nav__item">
               <a class="site-nav__link" href="index.html">Главная</a>
@@ -35,52 +71,183 @@
               <a class="site-nav__link" href="catalog.html">Каталог</a>
             </li>
             <li class="site-nav__item">
-              <a class="site-nav__link" href="about.html">О нас</a>
+              <a class="site-nav__link" href="about.html">О магазине</a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="delivery.html">Доставка</a>
             </li>
             <li class="site-nav__item">
+              <a class="site-nav__link" href="order.html">Заявка</a>
+            </li>
+            <li class="site-nav__item">
               <a
                 class="site-nav__link site-nav__link--active"
                 href="contacts.html"
-                >Контакты</a
+                aria-current="page"
               >
+                Контакты
+              </a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a class="breadcrumbs__link" href="index.html">Главная</a>
-        <span class="breadcrumbs__current">Контакты</span>
+        <span class="breadcrumbs__current" aria-current="page">Контакты</span>
       </nav>
 
       <section class="section">
-        <h1>Контакты</h1>
+        <h1>Контакты магазина «Горбушка Тех»</h1>
         <p>
-          Здесь размещается контактная информация учебного интернет-магазина.
+          Павильон продаж, пункт самовывоза и тестовый стенд для проверки
+          комплектующих расположены в Москве, в ТЦ «Горбушкин Двор».
         </p>
 
-        <ul>
-          <li>Телефон: +7 (900) 000-00-00</li>
-          <li>E-mail: info@example.com</li>
-          <li>Адрес: г. Москва, учебный проект</li>
-        </ul>
+        <div class="contacts-grid">
+          <article class="contact-card">
+            <h2>Адрес павильона</h2>
+            <p>
+              г. Москва, Багратионовский проезд, д. 7, корп. 3, ТЦ «Горбушкин
+              Двор», сектор B, 2 этаж, павильон <strong>B2-114</strong>.
+            </p>
+            <p>5 минут пешком от станции метро «Багратионовская» (выход №2).</p>
+          </article>
+
+          <article class="contact-card">
+            <h2>Связь и бронирование</h2>
+            <p>Телефон: <a href="tel:+74957482590">+7 (495) 748-25-90</a></p>
+            <p>
+              E-mail:
+              <a href="mailto:info@gorbushkatech.ru">info@gorbushkatech.ru</a>
+            </p>
+            <p>Отдел сборки ПК: доб. 104</p>
+          </article>
+
+          <article class="contact-card">
+            <h2>Режим работы</h2>
+            <p>Понедельник — Воскресенье: <strong>10:00 – 21:00</strong></p>
+            <p>Работаем без выходных и перерывов.</p>
+            <p>Парковка ТЦ для посетителей: первые 2 часа бесплатно.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="map">
+        <h2>ТЦ «Горбушкин Двор» на Яндекс Картах</h2>
+        <div class="map-container">
+          <iframe
+            class="map-container__iframe"
+            src="https://yandex.ru/map-widget/v1/?z=16&ol=biz&oid=1218481775"
+            title="Интерактивная карта проезда к магазину Горбушка Тех в ТЦ Горбушкин Двор"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <div class="map-container__caption">
+            <span>
+              Багратионовский проезд, д. 7, корп. 3 · ТЦ «Горбушкин Двор», пав.
+              B2-114
+            </span>
+            <a
+              class="button button--secondary"
+              href="https://yandex.ru/maps/org/gorbushkin_dvor/1218481775/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Построить маршрут в Яндекс Картах
+            </a>
+          </div>
+        </div>
       </section>
 
       <section class="section" id="feedback">
-        <h2>Обратная связь</h2>
-        <p>Для отправки заявки используйте форму.</p>
-        <a class="button" href="order.html">Перейти к форме</a>
+        <h2>Обратная связь и бронь товара</h2>
+        <p>
+          Уточните наличие редкой видеокарты, процессора или забронируйте
+          смартфон к вашему приезду через форму заявки.
+        </p>
+        <a class="button button--primary" href="order.html">
+          Перейти к форме заявки
+        </a>
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__grid">
+          <div>
+            <a class="site-footer__brand" href="index.html">Горбушка Тех</a>
+            <p class="site-footer__desc">
+              Магазин компьютерных комплектующих, игровых видеокарт, процессоров
+              и оригинальных смартфонов в Москве.
+            </p>
+            <p class="site-footer__hours">
+              Режим работы: ежедневно 10:00–21:00
+            </p>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Каталог</h2>
+            <ul class="site-footer__list">
+              <li><a href="catalog.html?cat=gpu">Видеокарты</a></li>
+              <li><a href="catalog.html?cat=cpu">Процессоры</a></li>
+              <li><a href="catalog.html?cat=phones">Смартфоны</a></li>
+              <li>
+                <a href="catalog.html?cat=peripherals">SSD и периферия</a>
+              </li>
+            </ul>
+          </div>
+
+          <nav class="site-footer__nav" aria-label="Разделы сайта">
+            <h2 class="site-footer__heading">Покупателям</h2>
+            <ul class="site-footer__list">
+              <li><a href="about.html">О магазине</a></li>
+              <li><a href="delivery.html">Доставка и оплата</a></li>
+              <li><a href="order.html">Оформление заявки</a></li>
+              <li><a href="contacts.html">Контакты и схема проезда</a></li>
+            </ul>
+          </nav>
+
+          <div>
+            <h2 class="site-footer__heading">Павильон на Горбушке</h2>
+            <address class="site-footer__contacts">
+              <span>
+                г. Москва, Багратионовский проезд, д. 7, корп. 3, ТЦ «Горбушкин
+                Двор», пав. B2-114
+              </span>
+              <a href="tel:+74957482590">+7 (495) 748-25-90</a>
+              <a href="mailto:info@gorbushkatech.ru">info@gorbushkatech.ru</a>
+              <a href="contacts.html#map">Смотреть на Яндекс Картах</a>
+            </address>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>
+            &copy; 2026 Горбушка Тех (учебный проект, дисциплина «Фронтенд и
+            бэкенд разработка»).
+          </p>
+          <div class="site-footer__payments">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Наличные</span>
+            <span class="payment-badge">Счёт для юр. лиц</span>
+          </div>
+        </div>
+      </div>
     </footer>
+
+    <a
+      href="#top"
+      class="scroll-top"
+      id="scroll-top"
+      aria-label="Вернуться в начало страницы"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+      </svg>
+    </a>
   </body>
 </html>
