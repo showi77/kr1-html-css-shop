@@ -5,35 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Страница оформления заявки учебного интернет-магазина."
+      content="Оформление бронирования, доставки или заявки на подбор комплектующих в магазине Горбушка Тех."
     />
-    <title>Оформление заявки — Учебный интернет-магазин</title>
+    <title>Оформление заявки — Горбушка Тех</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Учебный интернет-магазин" />
-    <meta
-      property="og:description"
-      content="Учебный frontend-проект интернет-магазина."
-    />
-    <meta
-      property="og:image"
-      content="https://username.github.io/kr1-html-css-shop/images/preview.png"
-    />
   </head>
-  <body>
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a class="site-header__logo" href="index.html">ShopProject</a>
 
-        <nav class="site-nav" aria-label="Основная навигация">
+  <body id="top">
+    <a class="skip-link" href="#main-content">
+      Перейти к основному содержимому
+    </a>
+
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="top-bar__inner">
+          <span>
+            ТЦ «Горбушкин Двор», Багратионовский пр., 7 к3, пав. B2-114 · м.
+            Багратионовская · Ежедневно 10:00–21:00
+          </span>
+          <a class="top-bar__phone" href="tel:+74957482590">
+            +7 (495) 748-25-90
+          </a>
+        </div>
+      </div>
+
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="index.html">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <rect x="9" y="9" width="6" height="6" />
+            <path
+              d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"
+            />
+          </svg>
+          <span>Горбушка Тех</span>
+          <span class="site-header__logo-badge">B2-114</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Меню
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
             <li class="site-nav__item">
               <a class="site-nav__link" href="index.html">Главная</a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="catalog.html">Каталог</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="about.html">О магазине</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="delivery.html">Доставка</a>
+            </li>
+            <li class="site-nav__item">
+              <a
+                class="site-nav__link site-nav__link--active"
+                href="order.html"
+                aria-current="page"
+              >
+                Заявка
+              </a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="contacts.html">Контакты</a>
@@ -43,31 +93,63 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a class="breadcrumbs__link" href="index.html">Главная</a>
-        <span class="breadcrumbs__current">Оформление заявки</span>
+        <span class="breadcrumbs__current" aria-current="page">
+          Оформление заявки
+        </span>
       </nav>
 
-      <section class="section" style="max-width: 600px; margin: 0 auto">
+      <section class="section order-card-wrapper">
         <h1>Оформление заявки</h1>
         <p>
-          Заполните форму ниже для отправки заявки на покупку или консультацию.
+          Забронируйте технику к вашему приезду в ТЦ «Горбушкин Двор» или
+          закажите курьерскую доставку по Москве.
         </p>
 
         <form
-          class="order-form"
+          class="order-form order-form--card"
           id="order-form"
           action="#"
           method="post"
           novalidate
-          style="
-            background-color: var(--color-surface);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-border);
-          "
         >
+          <div class="order-form__field">
+            <label class="order-form__label" for="order-product">
+              Интересующий товар или услуга (необязательно)
+            </label>
+            <select
+              class="order-form__select"
+              id="order-product"
+              name="selected-product"
+            >
+              <option value="">Без привязки к товару / консультация</option>
+              <option value="rtx-4070-super">
+                MSI GeForce RTX 4070 SUPER GAMING X SLIM 12GB
+              </option>
+              <option value="rtx-4080-super">
+                ASUS TUF Gaming GeForce RTX 4080 SUPER OC 16GB
+              </option>
+              <option value="rx-7800-xt">
+                Sapphire NITRO+ AMD Radeon RX 7800 XT 16GB
+              </option>
+              <option value="ryzen-7-7800x3d">
+                Процессор AMD Ryzen 7 7800X3D AM5 OEM
+              </option>
+              <option value="core-i7-14700k">
+                Процессор Intel Core i7-14700K LGA1700 BOX
+              </option>
+              <option value="iphone-16-pro">
+                Apple iPhone 16 Pro 256GB Natural Titanium
+              </option>
+              <option value="galaxy-s24-ultra">
+                Samsung Galaxy S24 Ultra 12/256GB Titanium Gray
+              </option>
+              <option value="pc-build">Индивидуальная сборка ПК</option>
+            </select>
+          </div>
+
           <div class="order-form__field">
             <label class="order-form__label" for="order-name">Имя</label>
             <input
@@ -76,6 +158,7 @@
               name="name"
               type="text"
               placeholder="Введите ваше имя"
+              autocomplete="name"
               required
             />
           </div>
@@ -88,6 +171,7 @@
               name="email"
               type="email"
               placeholder="example@mail.ru"
+              autocomplete="email"
               required
             />
           </div>
@@ -101,14 +185,19 @@
               type="tel"
               inputmode="tel"
               placeholder="+7 (900) 000-00-00"
-              pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+              autocomplete="tel"
+              aria-describedby="phone-hint"
               required
             />
-            <small>Формат: +7 (900) 000-00-00</small>
+            <small class="order-form__hint" id="phone-hint">
+              Формат: +7 (900) 000-00-00
+            </small>
           </div>
 
           <div class="form-field">
-            <label class="order-form__label" for="order-date">Дата связи</label>
+            <label class="order-form__label" for="order-date">
+              Желаемая дата визита / связи
+            </label>
             <input
               class="order-form__input"
               id="order-date"
@@ -118,35 +207,38 @@
           </div>
 
           <div class="form-field">
-            <label for="order-topic">Тема заявки</label>
+            <label class="order-form__label" for="order-topic">
+              Способ получения / тема
+            </label>
             <select
+              class="order-form__select"
               id="order-topic"
               name="topic"
               required
-              class="order-form__select"
             >
               <option value="">Выберите тему</option>
-              <option value="product">Заказ товара</option>
-              <option value="consultation">Консультация</option>
-              <option value="delivery">Доставка</option>
+              <option value="pickup">
+                Самовывоз из ТЦ «Горбушкин Двор» (пав. B2-114)
+              </option>
+              <option value="delivery">Доставка курьером / СДЭК</option>
+              <option value="consultation">Консультация и сборка ПК</option>
             </select>
           </div>
 
           <div class="form-field">
-            <label for="order-comment">Комментарий</label>
+            <label class="order-form__label" for="order-comment">
+              Комментарий
+            </label>
             <textarea
+              class="order-form__textarea"
               id="order-comment"
               name="comment"
               rows="4"
-              placeholder="Укажите дополнительную информацию"
-              class="order-form__textarea"
+              placeholder="Укажите адрес доставки, бюджет подбора или время визита"
             ></textarea>
           </div>
 
-          <div
-            class="form-field form-field--checkbox"
-            style="margin-top: var(--space-md)"
-          >
+          <div class="form-field form-field--checkbox">
             <label>
               <input
                 id="order-agreement"
@@ -159,11 +251,7 @@
           </div>
 
           <div class="order-form__actions">
-            <button
-              class="button button--primary"
-              type="submit"
-              style="width: 100%"
-            >
+            <button class="button button--primary" type="submit">
               Отправить заявку
             </button>
           </div>
@@ -172,17 +260,87 @@
         <p
           class="success-message"
           id="success-message"
+          role="status"
+          aria-live="polite"
           hidden
-          style="margin-top: var(--space-md)"
-        >
-          Форма успешно отправлена!
-        </p>
+        ></p>
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__grid">
+          <div>
+            <a class="site-footer__brand" href="index.html">Горбушка Тех</a>
+            <p class="site-footer__desc">
+              Магазин компьютерных комплектующих, игровых видеокарт, процессоров
+              и оригинальных смартфонов в Москве.
+            </p>
+            <p class="site-footer__hours">
+              Режим работы: ежедневно 10:00–21:00
+            </p>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Каталог</h2>
+            <ul class="site-footer__list">
+              <li><a href="catalog.html?cat=gpu">Видеокарты</a></li>
+              <li><a href="catalog.html?cat=cpu">Процессоры</a></li>
+              <li><a href="catalog.html?cat=phones">Смартфоны</a></li>
+              <li>
+                <a href="catalog.html?cat=peripherals">SSD и периферия</a>
+              </li>
+            </ul>
+          </div>
+
+          <nav class="site-footer__nav" aria-label="Разделы сайта">
+            <h2 class="site-footer__heading">Покупателям</h2>
+            <ul class="site-footer__list">
+              <li><a href="about.html">О магазине</a></li>
+              <li><a href="delivery.html">Доставка и оплата</a></li>
+              <li><a href="order.html">Оформление заявки</a></li>
+              <li><a href="contacts.html">Контакты и схема проезда</a></li>
+            </ul>
+          </nav>
+
+          <div>
+            <h2 class="site-footer__heading">Павильон на Горбушке</h2>
+            <address class="site-footer__contacts">
+              <span>
+                г. Москва, Багратионовский проезд, д. 7, корп. 3, ТЦ «Горбушкин
+                Двор», пав. B2-114
+              </span>
+              <a href="tel:+74957482590">+7 (495) 748-25-90</a>
+              <a href="mailto:info@gorbushkatech.ru">info@gorbushkatech.ru</a>
+              <a href="contacts.html#map">Смотреть на Яндекс Картах</a>
+            </address>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>
+            &copy; 2026 Горбушка Тех (учебный проект, дисциплина «Фронтенд и
+            бэкенд разработка»).
+          </p>
+          <div class="site-footer__payments">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Наличные</span>
+            <span class="payment-badge">Счёт для юр. лиц</span>
+          </div>
+        </div>
+      </div>
     </footer>
+
+    <a
+      href="#top"
+      class="scroll-top"
+      id="scroll-top"
+      aria-label="Вернуться в начало страницы"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+      </svg>
+    </a>
   </body>
 </html>

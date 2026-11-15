@@ -5,18 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Информация о проекте и команде учебного интернет-магазина."
+      content="О магазине Горбушка Тех в ТЦ Горбушкин Двор: опыт работы, проверка техники на стенде и гарантия."
     />
-    <title>О нас — Учебный интернет-магазин</title>
+    <title>О магазине — Горбушка Тех</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
   </head>
-  <body id="top">
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a class="site-header__logo" href="index.html">ShopProject</a>
 
-        <nav class="site-nav" aria-label="Основная навигация">
+  <body id="top">
+    <a class="skip-link" href="#main-content">
+      Перейти к основному содержимому
+    </a>
+
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="top-bar__inner">
+          <span>
+            ТЦ «Горбушкин Двор», Багратионовский пр., 7 к3, пав. B2-114 · м.
+            Багратионовская · Ежедневно 10:00–21:00
+          </span>
+          <a class="top-bar__phone" href="tel:+74957482590">
+            +7 (495) 748-25-90
+          </a>
+        </div>
+      </div>
+
+      <div class="site-header__inner">
+        <a class="site-header__logo" href="index.html">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <rect x="9" y="9" width="6" height="6" />
+            <path
+              d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"
+            />
+          </svg>
+          <span>Горбушка Тех</span>
+          <span class="site-header__logo-badge">B2-114</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          Меню
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
           <ul class="site-nav__list">
             <li class="site-nav__item">
               <a class="site-nav__link" href="index.html">Главная</a>
@@ -25,12 +71,19 @@
               <a class="site-nav__link" href="catalog.html">Каталог</a>
             </li>
             <li class="site-nav__item">
-              <a class="site-nav__link site-nav__link--active" href="about.html"
-                >О нас</a
+              <a
+                class="site-nav__link site-nav__link--active"
+                href="about.html"
+                aria-current="page"
               >
+                О магазине
+              </a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="delivery.html">Доставка</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="order.html">Заявка</a>
             </li>
             <li class="site-nav__item">
               <a class="site-nav__link" href="contacts.html">Контакты</a>
@@ -40,80 +93,144 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a class="breadcrumbs__link" href="index.html">Главная</a>
-        <span class="breadcrumbs__current">О нас</span>
+        <span class="breadcrumbs__current" aria-current="page">О магазине</span>
       </nav>
 
       <section class="section">
-        <h1>О проекте ShopProject</h1>
+        <h1>О магазине «Горбушка Тех»</h1>
         <p>
-          ShopProject — это современный учебный проект, созданный в рамках
-          изучения дисциплин веб-разработки. Наш каталог объединяет лучшие
-          решения в области компьютерной периферии и электроники для студентов,
-          разработчиков и энтузиастов.
+          «Горбушка Тех» — специализированный магазин компьютерных
+          комплектующих, смартфонов и периферии в ТЦ «Горбушкин Двор». Мы
+          помогаем геймерам, разработчикам и дизайнерам собирать
+          сбалансированные ПК и покупать оригинальную мобильную технику без
+          переплат.
         </p>
 
         <div class="stats-grid">
           <article class="stat-card">
-            <div class="stat-card__number">5+</div>
-            <div class="stat-card__label">Лет опыта в e-commerce</div>
+            <div class="stat-card__number">8+</div>
+            <div class="stat-card__label">Лет работы на Горбушке</div>
           </article>
           <article class="stat-card">
-            <div class="stat-card__number">10 000+</div>
-            <div class="stat-card__label">Довольных клиентов</div>
+            <div class="stat-card__number">15 000+</div>
+            <div class="stat-card__label">Выданных заказов</div>
           </article>
           <article class="stat-card">
-            <div class="stat-card__number">100.1%</div>
-            <div class="stat-card__label">Заказов доставлено в срок</div>
+            <div class="stat-card__number">99.4%</div>
+            <div class="stat-card__label">
+              Техники без гарантийных обращений
+            </div>
           </article>
           <article class="stat-card">
-            <div class="stat-card__number">25/8</div>
-            <div class="stat-card__label">Техническая поддержка</div>
+            <div class="stat-card__number">36 мес.</div>
+            <div class="stat-card__label">Гарантия на видеокарты и SSD</div>
           </article>
         </div>
 
-        <h2>Наши ценности</h2>
+        <h2>Наши принципы работы</h2>
         <ul>
           <li>
-            <strong>Качество и прозрачность:</strong> проверенные товары с
-            честными отзывами и спецификациями.
+            <strong>Открытая проверка перед покупкой:</strong> вскрываем
+            заводскую упаковку при покупателе, сверяем IMEI и серийные номера,
+            проверяем видеокарты на тестовом стенде.
           </li>
           <li>
-            <strong>Скорость:</strong> оперативная обработка заявок и доставка
-            по всей стране.
+            <strong>Актуальные цены и наличие:</strong> ключевые видеокарты,
+            процессоры и смартфоны всегда лежат на складе в павильоне B2-114.
           </li>
           <li>
-            <strong>Современные технологии:</strong> чистый код, семантическая
-            разметка и удобный интерфейс.
+            <strong>Грамотная консультация:</strong> подскажем, какой блок
+            питания нужен под RTX 4080 SUPER и какая оперативная память
+            оптимальна для Ryzen 7 7800X3D.
           </li>
         </ul>
 
-        <div style="margin-top: var(--space-xl); text-align: center">
-          <a
-            class="button button--primary"
-            href="catalog.html"
-            style="padding: 12px 28px"
-            >Перейти в каталог товаров</a
-          >
+        <div class="hero__actions" style="margin-top: var(--space-xl)">
+          <a class="button button--primary" href="catalog.html">
+            Перейти в каталог товаров
+          </a>
+          <a class="button button--secondary" href="contacts.html#map">
+            Посмотреть павильон на карте
+          </a>
         </div>
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__grid">
+          <div>
+            <a class="site-footer__brand" href="index.html">Горбушка Тех</a>
+            <p class="site-footer__desc">
+              Магазин компьютерных комплектующих, игровых видеокарт, процессоров
+              и оригинальных смартфонов в Москве.
+            </p>
+            <p class="site-footer__hours">
+              Режим работы: ежедневно 10:00–21:00
+            </p>
+          </div>
+
+          <div>
+            <h2 class="site-footer__heading">Каталог</h2>
+            <ul class="site-footer__list">
+              <li><a href="catalog.html?cat=gpu">Видеокарты</a></li>
+              <li><a href="catalog.html?cat=cpu">Процессоры</a></li>
+              <li><a href="catalog.html?cat=phones">Смартфоны</a></li>
+              <li>
+                <a href="catalog.html?cat=peripherals">SSD и периферия</a>
+              </li>
+            </ul>
+          </div>
+
+          <nav class="site-footer__nav" aria-label="Разделы сайта">
+            <h2 class="site-footer__heading">Покупателям</h2>
+            <ul class="site-footer__list">
+              <li><a href="about.html">О магазине</a></li>
+              <li><a href="delivery.html">Доставка и оплата</a></li>
+              <li><a href="order.html">Оформление заявки</a></li>
+              <li><a href="contacts.html">Контакты и схема проезда</a></li>
+            </ul>
+          </nav>
+
+          <div>
+            <h2 class="site-footer__heading">Павильон на Горбушке</h2>
+            <address class="site-footer__contacts">
+              <span>
+                г. Москва, Багратионовский проезд, д. 7, корп. 3, ТЦ «Горбушкин
+                Двор», пав. B2-114
+              </span>
+              <a href="tel:+74957482590">+7 (495) 748-25-90</a>
+              <a href="mailto:info@gorbushkatech.ru">info@gorbushkatech.ru</a>
+              <a href="contacts.html#map">Смотреть на Яндекс Картах</a>
+            </address>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p>
+            &copy; 2026 Горбушка Тех (учебный проект, дисциплина «Фронтенд и
+            бэкенд разработка»).
+          </p>
+          <div class="site-footer__payments">
+            <span class="payment-badge">МИР</span>
+            <span class="payment-badge">СБП</span>
+            <span class="payment-badge">Наличные</span>
+            <span class="payment-badge">Счёт для юр. лиц</span>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <a
       href="#top"
       class="scroll-top"
       id="scroll-top"
-      aria-label="Наверх"
-      title="Наверх"
+      aria-label="Вернуться в начало страницы"
     >
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
       </svg>
     </a>
