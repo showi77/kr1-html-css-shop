@@ -789,3 +789,62 @@ function initOrderDialogAndForm() {
     }
   });
 }
+
+// ==========================================
+// Анимация цифр (счетчик) для страницы about.html
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const statNumbers = document.querySelectorAll('.stat-card__number');
+  
+  if (!statNumbers.length) return; // Если на странице нет блока статистики, выходим
+
+  // Функция для форматирования чисел (добавляет пробелы для тысяч)
+  const formatNumber = (num, decimals) => {
+    let str = num.toFixed(decimals);
+    let parts = str.split('.');
+    // Добавляем пробел каждые 3 цифры в целой части
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    return parts.join('.');
+  };
+
+  // Функция анимации конкретного элемента
+  const animateValue = (el) => {
+    const target = parseFloat(el.getAttribute('data-target'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const decimals = parseInt(el.getAttribute('data-decimals')) || 0;
+    const duration = 2000; // Длительность анимации 2 секунды
+    const startTime = performance.now();
+
+    const updateNumber = (currentTime) => {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / duration, 1);
+      
+      // Функция плавности (easeOutQuad) - замедляется к концу
+      const easeOutProgress = 1 - (1 - progress) * (1 - progress);
+      const currentNumber = target * easeOutProgress;
+
+      el.textContent = formatNumber(currentNumber, decimals) + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateNumber);
+      } else {
+        // Гарантируем точное конечное значение
+        el.textContent = formatNumber(target, decimals) + suffix; 
+      }
+    };
+
+    requestAnimationFrame(updateNumber);
+  };
+
+  // Наблюдатель за появлением блока в зоне видимости
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateValue(entry.target);
+        obs.unobserve(entry.target); // Анимируем только один раз
+      }
+    });
+  }, { threshold: 0.5 }); // Срабатывает, когда 50% карточки показалось на экране
+
+  statNumbers.forEach(num => observer.observe(num));
+});
